@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xomochi.github.io/"/>
-  <updated>2018-12-19T01:14:45.411Z</updated>
+  <updated>2019-02-12T06:22:10.393Z</updated>
   <id>http://0xomochi.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>About Packers</title>
+    <link href="http://0xomochi.github.io/2019/01/29/About-Packers/"/>
+    <id>http://0xomochi.github.io/2019/01/29/About-Packers/</id>
+    <published>2019-01-29T03:46:39.000Z</published>
+    <updated>2019-02-12T06:22:10.393Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Packer"><a href="#Packer" class="headerlink" title="Packer"></a>Packer</h1><p>ACProtect<br>Alternate EXE<br>Armadillo<br>FSG<br>MEW<br>Neolite<br>Obsidium<br>PELock<br>RLPack<br>Themida<br>UPX<br>VMProtect<br>Yoda’s Protector  </p><p>これら10種のパッカーについて以下で解説する。</p><h1 id="What’s-Packers"><a href="#What’s-Packers" class="headerlink" title="What’s Packers?"></a>What’s Packers?</h1><p>ランタイムパッカーにはCompressor, Obfuscator, Cryptor, Protector, Bundlerの5種類がある。</p><ul><li>Compressor</li><li>Obfuscator</li><li>Cryptor</li><li>Protector</li><li>Bundler</li></ul><p>(to be updated)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Packer&quot;&gt;&lt;a href=&quot;#Packer&quot; class=&quot;headerlink&quot; title=&quot;Packer&quot;&gt;&lt;/a&gt;Packer&lt;/h1&gt;&lt;p&gt;ACProtect&lt;br&gt;Alternate EXE&lt;br&gt;Armadillo&lt;br&gt;FSG&lt;br&gt;MEW&lt;
+      
+    
+    </summary>
+    
+      <category term="packer" scheme="http://0xomochi.github.io/categories/packer/"/>
+    
+    
+      <category term="packer" scheme="http://0xomochi.github.io/tags/packer/"/>
+    
+  </entry>
   
   <entry>
     <title>PowerShell~入門~</title>
