@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    PyREBoxについて | MalBox
+  </title>
+  <meta name="description" content="omochi&#39;s tech blog">
+  
+  <meta name="keywords" content="
+  PyREBox,malware analysis
+  ">
+  
+  <meta name="author" content="0xomochi">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-125133343-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://github.com/0xomochi/images/blob/master/IMG_0950.JPG?raw=true"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 8 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 10 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 9 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">MalBox</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    0xomochi
+
+    <span class="post-date float-right" title="{{moment(1549952577000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1549952577000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>PyREBoxについて</h1>
+    <h1 id="PyREBox"><a href="#PyREBox" class="headerlink" title="PyREBox"></a>PyREBox</h1><h3 id="PyREBox-Python-Reverse-Engineering-Sandbox"><a href="#PyREBox-Python-Reverse-Engineering-Sandbox" class="headerlink" title="PyREBox(=Python Reverse Engineering Sandbox)"></a><a href="https://github.com/Cisco-Talos/pyrebox" target="_blank" rel="noopener">PyREBox</a>(=Python Reverse Engineering Sandbox)</h3><p>Cisco-TalosがリリースしたPythonスクリプトで操作できるQEMUベースのリバースエンジニアリング用サンドボックス(オープンソース)</p>
+<h3 id="PyREBox概要"><a href="#PyREBox概要" class="headerlink" title="PyREBox概要"></a>PyREBox概要</h3><blockquote>
+<p>PyREBox is a Python scriptable Reverse Engineering sandbox. It is based on QEMU, and its goal is to aid reverse engineering by providing dynamic analysis and debugging capabilities from a different perspective. PyREBox allows to inspect a running QEMU VM, modify its memory or registers, and to instrument its execution, by creating simple scripts in python to automate any kind of analysis. QEMU (when working as a whole-system-emulator) emulates a complete system (CPU, memory, devices…). By using VMI techniques, it does not require to perform any modification into the guest operating system, as it transparently retrieves information from its memory at run-time.</p>
+<p>Several academic projects such as DECAF, PANDA, S2E, or AVATAR, have previously leveraged QEMU based instrumentation to overcome reverse engineering tasks. These projects allow to write plugins in C/C++, and implement several advanced features such as dynamic taint analysis, symbolic execution, or even record and replay of execution traces. With PyREBox, we aim to apply this technology focusing on keeping the design simple, and on the usability of the system for threat analysts.</p>
+<p>PyREBox won the Volatility Plugin Contest in 2017!</p>
+</blockquote>
+<p>PyREBoxはVolatility Frameworkのプラグインコンテストで優勝している。<br>Volatility Frameworkは無料配布されているメモリフォレンジックツールである。<br>詳しくは<a href="https://www.volatilityfoundation.org/" target="_blank" rel="noopener">Volatility Foundation</a>を参照。</p>
+<blockquote>
+<blockquote>
+<p><a href="https://volatility-labs.blogspot.com/2017/11/results-from-5th-annual-2017-volatility.html" target="_blank" rel="noopener">Results from the (5th Annual) 2017 Volatility Plugin Contest are in!</a><br>1st: Xabier Ugarte-Pedrero (Cisco Talos): PyREBox<br>PyREBox provides an extensible reverse engineering sandbox that combines debugging capabilities with introspection. The analyst can interact with the whole system emulator, QEMU, guest either manually, using IPython, or by creating Python scripts. Unlike previous reverse engineering platforms, PyREBox, is explicitly designed for modern threat analysts and the tasks they commonly perform. PyREBox also leverages Volatility to help bridge the semantic gap challenges typically associated with virtual machine introspection.</p>
+</blockquote>
+<p>This tool was presented at HITB Amsterdam 2018. You can see the slides, or watch the presentation. It was also presented at the third edition of EuskalHack Security Congress (slides available).</p>
+</blockquote>
+<p><br></p>
+<p>PyREBoxの詳細なフレームワークと機能については以下を参照。<br>参考1:<a href="https://blog.talosintelligence.com/2017/07/pyrebox.html" target="_blank" rel="noopener">PyREBox, a Python Scriptable Reverse Engineering Sandbox (MONDAY, JULY 17, 2017)</a><br>参考2:<a href="https://talosintelligence.com/pyrebox" target="_blank" rel="noopener">talosintelligence.com/prebox </a></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><h3 id="Malware-Monitor"><a href="#Malware-Monitor" class="headerlink" title="Malware Monitor"></a>Malware Monitor</h3><p>Pythonで書かれたPyREBox用のスクリプト。<br>マルウェア解析に有用な情報を自動的に収集することでマルウェア解析の初期段階において解析者を助ける。<br>主な機能はAPIトレース、ダンプ、実行コードのパスの可視化、メモリモニタ。</p>
+<blockquote>
+<p><code>The api tracer module</code> allows to trace Windows API function calls, and to automatically extract the input and output parameters. An IDA Python script allows to import and visualize this information in IDA.</p>
+<p><code>The dumper module</code> allows to dump the memory of a process during its execution. This module is configurable by the user, who can choose the best moment to trigger the memory dump.</p>
+<p><code>The coverage module</code> collects an execution trace that can be used to colorize basic blocks in IDA. This features provides the user information about which code paths get executed, and which do not.</p>
+<p>Finally, <code>the memory monitor module</code> (refered to as interproc in the scripts), monitors different memory-related operations and events, and also allows to monitor process interaction events, like new processes created, memory injection to existing processes, and so on. This last module is orthogonal to the other three. Since it monitors process creation and opening, it allows to monitor not only the initial process, but all those related to it. For example, if api tracer is turned on, and the memory monitor detects that the first process creates a second process, api tracer will start monitoring this new process and will generate an API call trace for it as well.</p>
+</blockquote>
+<p>GitHub: <a href="https://github.com/Cisco-Talos/pyrebox/tree/master/mw_monitor" target="_blank" rel="noopener">Malware Monitor (pyrebox/mw_monitor/)</a></p>
+<h3 id="関連"><a href="#関連" class="headerlink" title="関連"></a>関連</h3><ul>
+<li><a href="https://gblogs.cisco.com/jp/2018/04/talos-malware-monitor-pyrebox-for-analysis/" target="_blank" rel="noopener">Malware monitor：PyREBox を活用したマルウェア分析(Talos JAPAN 2018/04/24)</a></li>
+</ul>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://0xomochi.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2018 0xomochi</li>
+      <li><a href="http://0xomochi.github.io">Home</a></li>
+      
+      <li><a href="https://github.com/0xomochi">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

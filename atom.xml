@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xomochi.github.io/"/>
-  <updated>2019-02-12T06:30:34.076Z</updated>
+  <updated>2019-02-12T06:32:42.422Z</updated>
   <id>http://0xomochi.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyREBoxについて</title>
+    <link href="http://0xomochi.github.io/2019/02/12/PyREBox/"/>
+    <id>http://0xomochi.github.io/2019/02/12/PyREBox/</id>
+    <published>2019-02-12T06:22:57.000Z</published>
+    <updated>2019-02-12T06:32:42.422Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="PyREBox"><a href="#PyREBox" class="headerlink" title="PyREBox"></a>PyREBox</h1><h3 id="PyREBox-Python-Reverse-Engineering-Sandbox"><a href="#PyREBox-Python-Reverse-Engineering-Sandbox" class="headerlink" title="PyREBox(=Python Reverse Engineering Sandbox)"></a><a href="https://github.com/Cisco-Talos/pyrebox" target="_blank" rel="noopener">PyREBox</a>(=Python Reverse Engineering Sandbox)</h3><p>Cisco-TalosがリリースしたPythonスクリプトで操作できるQEMUベースのリバースエンジニアリング用サンドボックス(オープンソース)</p><h3 id="PyREBox概要"><a href="#PyREBox概要" class="headerlink" title="PyREBox概要"></a>PyREBox概要</h3><blockquote><p>PyREBox is a Python scriptable Reverse Engineering sandbox. It is based on QEMU, and its goal is to aid reverse engineering by providing dynamic analysis and debugging capabilities from a different perspective. PyREBox allows to inspect a running QEMU VM, modify its memory or registers, and to instrument its execution, by creating simple scripts in python to automate any kind of analysis. QEMU (when working as a whole-system-emulator) emulates a complete system (CPU, memory, devices…). By using VMI techniques, it does not require to perform any modification into the guest operating system, as it transparently retrieves information from its memory at run-time.</p><p>Several academic projects such as DECAF, PANDA, S2E, or AVATAR, have previously leveraged QEMU based instrumentation to overcome reverse engineering tasks. These projects allow to write plugins in C/C++, and implement several advanced features such as dynamic taint analysis, symbolic execution, or even record and replay of execution traces. With PyREBox, we aim to apply this technology focusing on keeping the design simple, and on the usability of the system for threat analysts.</p><p>PyREBox won the Volatility Plugin Contest in 2017!</p></blockquote><p>PyREBoxはVolatility Frameworkのプラグインコンテストで優勝している。<br>Volatility Frameworkは無料配布されているメモリフォレンジックツールである。<br>詳しくは<a href="https://www.volatilityfoundation.org/" target="_blank" rel="noopener">Volatility Foundation</a>を参照。</p><blockquote><blockquote><p><a href="https://volatility-labs.blogspot.com/2017/11/results-from-5th-annual-2017-volatility.html" target="_blank" rel="noopener">Results from the (5th Annual) 2017 Volatility Plugin Contest are in!</a><br>1st: Xabier Ugarte-Pedrero (Cisco Talos): PyREBox<br>PyREBox provides an extensible reverse engineering sandbox that combines debugging capabilities with introspection. The analyst can interact with the whole system emulator, QEMU, guest either manually, using IPython, or by creating Python scripts. Unlike previous reverse engineering platforms, PyREBox, is explicitly designed for modern threat analysts and the tasks they commonly perform. PyREBox also leverages Volatility to help bridge the semantic gap challenges typically associated with virtual machine introspection.</p></blockquote><p>This tool was presented at HITB Amsterdam 2018. You can see the slides, or watch the presentation. It was also presented at the third edition of EuskalHack Security Congress (slides available).</p></blockquote><p><br></p><p>PyREBoxの詳細なフレームワークと機能については以下を参照。<br>参考1:<a href="https://blog.talosintelligence.com/2017/07/pyrebox.html" target="_blank" rel="noopener">PyREBox, a Python Scriptable Reverse Engineering Sandbox (MONDAY, JULY 17, 2017)</a><br>参考2:<a href="https://talosintelligence.com/pyrebox" target="_blank" rel="noopener">talosintelligence.com/prebox </a></p><h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><h3 id="Malware-Monitor"><a href="#Malware-Monitor" class="headerlink" title="Malware Monitor"></a>Malware Monitor</h3><p>Pythonで書かれたPyREBox用のスクリプト。<br>マルウェア解析に有用な情報を自動的に収集することでマルウェア解析の初期段階において解析者を助ける。<br>主な機能はAPIトレース、ダンプ、実行コードのパスの可視化、メモリモニタ。</p><blockquote><p><code>The api tracer module</code> allows to trace Windows API function calls, and to automatically extract the input and output parameters. An IDA Python script allows to import and visualize this information in IDA.</p><p><code>The dumper module</code> allows to dump the memory of a process during its execution. This module is configurable by the user, who can choose the best moment to trigger the memory dump.</p><p><code>The coverage module</code> collects an execution trace that can be used to colorize basic blocks in IDA. This features provides the user information about which code paths get executed, and which do not.</p><p>Finally, <code>the memory monitor module</code> (refered to as interproc in the scripts), monitors different memory-related operations and events, and also allows to monitor process interaction events, like new processes created, memory injection to existing processes, and so on. This last module is orthogonal to the other three. Since it monitors process creation and opening, it allows to monitor not only the initial process, but all those related to it. For example, if api tracer is turned on, and the memory monitor detects that the first process creates a second process, api tracer will start monitoring this new process and will generate an API call trace for it as well.</p></blockquote><p>GitHub: <a href="https://github.com/Cisco-Talos/pyrebox/tree/master/mw_monitor" target="_blank" rel="noopener">Malware Monitor (pyrebox/mw_monitor/)</a></p><h3 id="関連"><a href="#関連" class="headerlink" title="関連"></a>関連</h3><ul><li><a href="https://gblogs.cisco.com/jp/2018/04/talos-malware-monitor-pyrebox-for-analysis/" target="_blank" rel="noopener">Malware monitor：PyREBox を活用したマルウェア分析(Talos JAPAN 2018/04/24)</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;PyREBox&quot;&gt;&lt;a href=&quot;#PyREBox&quot; class=&quot;headerlink&quot; title=&quot;PyREBox&quot;&gt;&lt;/a&gt;PyREBox&lt;/h1&gt;&lt;h3 id=&quot;PyREBox-Python-Reverse-Engineering-Sandbox&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="tool" scheme="http://0xomochi.github.io/categories/tool/"/>
+    
+      <category term="PyREBox" scheme="http://0xomochi.github.io/categories/tool/PyREBox/"/>
+    
+    
+      <category term="PyREBox" scheme="http://0xomochi.github.io/tags/PyREBox/"/>
+    
+      <category term="malware analysis" scheme="http://0xomochi.github.io/tags/malware-analysis/"/>
+    
+  </entry>
   
   <entry>
     <title>About Packers</title>
