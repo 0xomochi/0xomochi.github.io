@@ -8,7 +8,7 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    volatility_framework | MalBox
+    Volatility Framework 使い始め | MalBox
   </title>
   <meta name="description" content="omochi&#39;s tech blog">
   
@@ -143,8 +143,8 @@
   </h3>
 
   <article class="post-content">
-    <h1>volatility_framework</h1>
-    <h1 id="Volatility-Framework-使い始め"><a href="#Volatility-Framework-使い始め" class="headerlink" title="Volatility Framework 使い始め"></a>Volatility Framework 使い始め</h1><h3 id="インストール方法"><a href="#インストール方法" class="headerlink" title="インストール方法"></a>インストール方法</h3><p><code>$ brew install volatility</code></p>
+    <h1>Volatility Framework 使い始め</h1>
+    <h3 id="インストール方法"><a href="#インストール方法" class="headerlink" title="インストール方法"></a>インストール方法</h3><p><code>$ brew install volatility</code></p>
 <h3 id="エラー"><a href="#エラー" class="headerlink" title="エラー"></a>エラー</h3><p>以下のエラーが出たら<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dyld: Library not loaded: /usr/local/opt/readline/lib/libreadline.7.dylib</span><br><span class="line">  Referenced from: /usr/local/bin/awk</span><br></pre></td></tr></table></figure></p>
 <p>次のように実行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall gawk</span><br><span class="line"></span><br><span class="line">$ brew uninstall readline</span><br><span class="line"># もし上のreadlineの方のコマンドが弾かれた場合は以下を実行</span><br><span class="line">$ brew uninstall --ignore-dependencies readline</span><br><span class="line">$ brew uninstall --force readline</span><br></pre></td></tr></table></figure></p>
 <p>次に以下を実行しようとするとPATHについて怒られるとも思うので<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install readline</span><br></pre></td></tr></table></figure></p>
