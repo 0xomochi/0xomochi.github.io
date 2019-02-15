@@ -9,6 +9,25 @@ tags:
 - memory forensic
 ---
 
+### Volatility Frameworkとは
+
+無料配布オープンソースのメモリフォレンジックツール。pythonが使える環境であればUnix, Windows, MacOSで動作する。ローダンプ、クラッシュダンプ、ハイバーネーションファイルなどのファイルフォーマットに対応している。
+
+> The Volatility Framework is a completely open collection of tools,
+implemented in Python under the GNU General Public License, for the
+extraction of digital artifacts from volatile memory (RAM) samples.
+The extraction techniques are performed completely independent of the
+system being investigated but offer visibilty into the runtime state
+of the system. The framework is intended to introduce people to the
+techniques and complexities associated with extracting digital artifacts
+from volatile memory samples and provide a platform for further work into
+this exciting area of research.  
+> 引用: https://github.com/volatilityfoundation/volatility
+
+#### 参考
+・[Volatility Foundation](https://www.volatilityfoundation.org/)  
+・[GitHub volatilityfoundation/volatility](https://github.com/volatilityfoundation/volatility)
+
 ### インストール方法
 `$ brew install volatility`
 
