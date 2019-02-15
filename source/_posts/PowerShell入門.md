@@ -8,7 +8,7 @@ tags:
 - PowerShell
 ---
 ## PowerShellのインストール(for mac)
-Windows, Linuxその他へのインストールについては他を参照されたし
+Windows, Linuxその他へのインストールについては他を参照されたし。
 ```
 // Homebrew-Caskのインストール
 $ brew tap caskroom/cask
@@ -26,7 +26,7 @@ $ brew cask upgrade powershell
 ```
 
 ## PowerShellの起動
-terminalでこれを打ち込むだけ
+terminalでこれを打ち込むだけ。
 ```
 $ pwsh
 PowerShell v6.0.4
@@ -39,7 +39,7 @@ PS >
 ```
 
 ## PowerShellを触ってみる
-PowerShellは大文字小文字を区別しないので`$PSV` + tab でも`$psv` + tab でも`$PSVersionTable`と補完される
+PowerShellは大文字小文字を区別しないので、`$PSV` + tab でも`$psv` + tab でも`$PSVersionTable`と補完される。
 ```
 PS > $PSVersionTable
 
@@ -55,7 +55,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
 ```
-出力内容を一時保存しておく
+出力内容を一時保存しておく。
 ```
 PS > $ver = $PSVersionTable
 PS > $ver
@@ -72,15 +72,15 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
 ```
-PowerShellのexit
+PowerShellのexit方法は以下の通り。
 ```
 PS > exit
 // あるいはCtr+D
 ```
 
 ### Cmdlet(コマンドレット)
-lsコマンドと同じようなもの(PowerShellではCmdletと呼んでいるだけ)
-Cmdletは`[Verb]-[Nown]`の形になっている
+lsコマンドと同じようなもの(PowerShellではCmdletと呼んでいるだけ)。  
+Cmdletは`[Verb]-[Nown]`の形になっている。  
 例: `Get-Content`, `Set-Location`
 ```
 // Get-ChildItemはPowerShellを開いているディレクトリにあるファイルとディレクトリの一覧を表示するCmdlet(= ls)
@@ -103,4 +103,4 @@ d-----       2018/08/24      0:07                Pictures
 d-----       2018/08/24      0:07                Public
 ```
 ### シンタックスハイライト
-PowerShellコンソール上では変数、コマンド、数字がデフォルトで色付けされていて可愛い
+PowerShellコンソール上では変数、コマンド、数字がデフォルトで色付けされていて可愛い。
