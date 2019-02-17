@@ -104,3 +104,27 @@ d-----       2018/08/24      0:07                Public
 ```
 ### シンタックスハイライト
 PowerShellコンソール上では変数、コマンド、数字がデフォルトで色付けされていて可愛い。
+
+## 実際に使っていく時に便利な開発環境
+`Visual Studio Code`を使って開発を行うと便利。  
+使いやすいので書いておく。
+
+まず、以下から.zipファイルをダウンロードしてVSCodeをインストールする。  
+[Visual Studio Code Download link](https://code.visualstudio.com/docs/?dv=osx)
+
+↓
+
+VSCodeにPowerShellの拡張機能をインストールする。  
+Marketplaceで`PowerShell`と検索すると`PowerShell`という名前の拡張機能がヒットするのでそれをinstallする。
+
+↓
+
+以下のような環境でPowerShellを扱えるようになる。
+
+<img src="https://github.com/0xomochi/images/blob/master/vscode_powershell.png?raw=true"  title="PowerShell VSCode">
+
+
+
+## メモ
+
+(to be updated)
