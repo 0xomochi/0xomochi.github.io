@@ -23,17 +23,17 @@ homebrewインストール済み([homebrewのインストールについて](htt
 ブログのurlが"https://<replace_username>.github.io"になる  
 
 ### Homebrewでnodebrewをインストール  
-```
+```bash
 $ brew install node brew
 ```
 .bash_profileに追記して.bash_profileを再読み込み  
 pathの指定でミスってvimなどの主要コマンドが使えなくなった場合  
 -> [対処](https://yunabe.hatenablog.com/entry/2017/02/11/134355)  
-```
+```bash
 $ source ~/.bash_profile
 ```
 node.js(最新版)をインストールする  
-```
+```bash
 $ nodebrew install-binary latest
 Fetching: https://nodejs.org/dist/v10.10.0/node-v10.10.0-darwin-x64.tar.gz
 ######################################################################## 100.0%
@@ -53,28 +53,29 @@ current: v10.10.0
 $ npm -v
 6.2.0
 ```
-"$ nodebrew install-binary latest"がうまくいかなかった時は  
+`$ nodebrew install-binary latest`がうまくいかなかった時は  
 -> [対処法](https://qiita.com/yn01/items/d1fa10dbe4850f7cd693)
 これでもうまくいかない場合は上記コマンドにsudoをつけて実行  
 
 ### hexoとデプロイツールを導入  
-```
+```bash
 $ npm install hexo
 $ npm install hexo-deployer-git --save
 ```
 
 ### デプロイ
-```
+```bash
 $ mkdir myblog
 $ cd myblog
 $ hexo init
 $ hexo server
 ```
-これでlocalhost:4000でデプロイしたページが見れる  
-ctr+Cで終了  
+これで`localhost:4000`でデプロイしたページが見れる  
+`ctr+C`で終了  
 
 ### _config.ymlの修正
-themeによって変化するので割愛[参考](https://qiita.com/wawawa/items/1a2f174fb29c35302543)  
+themeによって変化するので割愛  
+[参考](https://qiita.com/wawawa/items/1a2f174fb29c35302543)  
 
 ### 好みのThemeを探す
 ・[hexo themes 公式](https://hexo.io/themes/)  
@@ -82,22 +83,22 @@ themeによって変化するので割愛[参考](https://qiita.com/wawawa/items
 ・本ブログで使っているtheme -> [sabrinaluo/hexo-theme-replica](https://github.com/sabrinaluo/hexo-theme-replica)  
 
 ### デプロイする
-```
+```bash
 $ git init
 $ git remote add origin git@github.com:<replace_username>/<replace_username>.github.io.git
 $ hexo deploy -g
 ```
-これで"https://<replace_username>.github.io"にアクセスしてブログが見れればdone  
+これで`https://<replace_username>.github.io`にアクセスしてブログが見れればdone  
 新しい記事を作る手順は本ブログの[Hello World](https://0xomochi.github.io/2018/09/07/hello-world/)にある  
 
 ### postの削除方法
-```
+```bash
 $ rm <your_dir>/source/_posts/<your_post.md>
 $ hexo clean
 $ hexo generate
 ```
 ### categoriesとtagsの404解消
-```
+```bash
 $ hexo new page categories
 $ hexo new page tags
 ```

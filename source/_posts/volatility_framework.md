@@ -29,17 +29,19 @@ this exciting area of research.
 ・[GitHub volatilityfoundation/volatility](https://github.com/volatilityfoundation/volatility)
 
 ### インストール方法
-`$ brew install volatility`
+```bash
+$ brew install volatility
+```
 
 ### エラー
 以下のエラーが出たら
-```
+```bash
 dyld: Library not loaded: /usr/local/opt/readline/lib/libreadline.7.dylib
   Referenced from: /usr/local/bin/awk
 ```
 
 次のように実行
-```
+```bash
 $ brew uninstall gawk
 
 $ brew uninstall readline
@@ -49,25 +51,25 @@ $ brew uninstall --force readline
 ```
 
 次に以下を実行しようとするとPATHについて怒られるとも思うので
-```
+```bash
 $ brew install readline
 ```
 
 
 以下のPATHを`~/.bashrc`に追加する
-```
+```bash
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 ```
 
 `~/.bashrc`をリロード
-```
+```bash
 $ source .bashrc
 ```
 
 
 PATHの追加後、以下のコマンドを実行する
-```
+```bash
 $ brew install readline
 $ brew install gawk
 ```
@@ -76,7 +78,7 @@ $ brew install gawk
 ### コマンド一覧
 `$ vol.py -h`を実行してヘルプを見る
 
-```
+```bash
 Volatility Foundation Volatility Framework 2.6
 Usage: Volatility - A memory forensics analysis platform.
 

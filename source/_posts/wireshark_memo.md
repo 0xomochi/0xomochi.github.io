@@ -12,7 +12,7 @@ tags:
 # tshark
 GUI likeなwiresharkのCLIバージョン  
 tsharkのインストール方法  
-```
+```bash
 $ brew cask install wireshark
 $ tshark -v
 ```
