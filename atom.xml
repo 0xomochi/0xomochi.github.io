@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xomochi.github.io/"/>
-  <updated>2019-03-18T02:11:38.257Z</updated>
+  <updated>2019-03-19T11:08:49.466Z</updated>
   <id>http://0xomochi.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows機でlive USBを作ったはなし</title>
+    <link href="http://0xomochi.github.io/2019/03/19/liveusb/"/>
+    <id>http://0xomochi.github.io/2019/03/19/liveusb/</id>
+    <published>2019-03-19T10:31:40.000Z</published>
+    <updated>2019-03-19T11:08:49.466Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="live-USBとは"><a href="#live-USBとは" class="headerlink" title="live USBとは"></a>live USBとは</h2><p>今回作ったlive USBはWindows機の元から入ってるライセンスを保持しつつ、同じPCを使ってUSBからUbuntuを起動するということができるもの。<br>使っているWindows機のOSを潰さずにUbuntuをさくさく使えるようにしたかったため、VirtualBoxなどの仮想環境構築ツールではなくlive USBを選択した。  </p><h2 id="必要なもの"><a href="#必要なもの" class="headerlink" title="必要なもの"></a>必要なもの</h2><ul><li>Ubuntuのisoイメージ<ul><li>公式から最新版をダウンロードしてくれば良い(無料)</li></ul></li><li>Ubuntuのisoイメージを入れるためのUSB<ul><li>2GBあれば足りる</li><li>live USBができたら用無しなのでフォーマットして再度使える</li></ul></li><li>Universal USB Installer<ul><li>これもfreeでダウンロードしてくれば良い</li></ul></li><li>Ubuntuを実際に起動するためのUSB<ul><li>最低でも16GB</li><li>ファイルなどを保存しておきたいなら64GB</li><li>今回は1TBSSDを使った(すいすい動くのでおすすめ)</li></ul></li></ul><h2 id="Ubuntu-Desktopのダウンロード"><a href="#Ubuntu-Desktopのダウンロード" class="headerlink" title="Ubuntu Desktopのダウンロード"></a>Ubuntu Desktopのダウンロード</h2><p>以下のリンクから最新バージョンの<code>Ubuntu 18.04.2 LTS</code>をダウンロードしてくる。<br><code>Download</code>をクリックすれば.isoイメージが降ってくる。<br>ダウンロードが完了したら、<strong><em>Ubuntuの.isoイメージを入れるためのUSB(容量小)</em></strong> に移動しておく。  </p><ul><li><a href="https://www.ubuntu.com/download/desktop" target="_blank" rel="noopener">Ubuntu Desktop Download Link</a></li></ul><h2 id="Universal-USB-Installerのダウンロード"><a href="#Universal-USB-Installerのダウンロード" class="headerlink" title="Universal USB Installerのダウンロード"></a>Universal USB Installerのダウンロード</h2><p><code>Universal USB Installer</code>は、USBなどのドライブにLinuxインストーラを作成できるアプリケーション。  </p><ul><li><a href="https://universal-usb-installer.jp.uptodown.com/windows" target="_blank" rel="noopener">Universal USB Installer Download Link</a></li></ul><blockquote><p><strong><em>Ubuntuの.isoイメージを入れるためのUSB(容量小)</em></strong> が刺さっている状態</p></blockquote><p>以下のようなUIになっていて、</p><ul><li>Step1: <code>Ubuntu</code>を選択</li><li>Step2: <code>Browse</code>から<code>ubuntu-18.04.2-desktop-amd64.iso</code>を選択</li><li>Step3: <strong><em>Ubuntuを実際に起動するためのUSB</em></strong> を選択</li></ul><p><img src="https://img.utdstc.com/screen/1/universal-usb-installer-001.jpg:s" title="setup"></p><p><code>Create</code>を押して以下のような画面になれば完了。</p><p><img src="https://img.utdstc.com/screen/1/universal-usb-installer-002.jpg:s" title="finish installation"></p><blockquote><p><strong><em>Ubuntuを実際に起動するためのUSB</em></strong> を刺しておく。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;live-USBとは&quot;&gt;&lt;a href=&quot;#live-USBとは&quot; class=&quot;headerlink&quot; title=&quot;live USBとは&quot;&gt;&lt;/a&gt;live USBとは&lt;/h2&gt;&lt;p&gt;今回作ったlive USBはWindows機の元から入ってるライセンスを保持
+      
+    
+    </summary>
+    
+      <category term="tool" scheme="http://0xomochi.github.io/categories/tool/"/>
+    
+      <category term="live USB" scheme="http://0xomochi.github.io/categories/tool/live-USB/"/>
+    
+    
+      <category term="live USB" scheme="http://0xomochi.github.io/tags/live-USB/"/>
+    
+      <category term="USB boot" scheme="http://0xomochi.github.io/tags/USB-boot/"/>
+    
+      <category term="Ubuntu" scheme="http://0xomochi.github.io/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>脆弱性VENOMについて</title>
