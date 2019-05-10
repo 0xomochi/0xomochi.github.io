@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xomochi.github.io/"/>
-  <updated>2019-05-10T06:56:16.525Z</updated>
+  <updated>2019-05-10T06:57:16.345Z</updated>
   <id>http://0xomochi.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>file-less-mal</title>
+    <title>ファイルレスマルウェア備忘録</title>
     <link href="http://0xomochi.github.io/2019/05/10/fileless-mal/"/>
     <id>http://0xomochi.github.io/2019/05/10/fileless-mal/</id>
     <published>2019-05-10T06:55:06.000Z</published>
-    <updated>2019-05-10T06:56:16.525Z</updated>
+    <updated>2019-05-10T06:57:16.345Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ファイルレスマルウェア-備忘録"><a href="#ファイルレスマルウェア-備忘録" class="headerlink" title="ファイルレスマルウェア 備忘録"></a>ファイルレスマルウェア 備忘録</h1><h2 id="ファイルレスマルウェアに関する記事"><a href="#ファイルレスマルウェアに関する記事" class="headerlink" title="ファイルレスマルウェアに関する記事"></a>ファイルレスマルウェアに関する記事</h2><h4 id="McAfee"><a href="#McAfee" class="headerlink" title="McAfee"></a>McAfee</h4><ul><li><a href="https://blogs.mcafee.jp/what-is-fileless-malware#1" target="_blank" rel="noopener">ファイルレスマルウェアの脅威！仕組みと感染経路からみる実践的対策</a></li><li><a href="https://www.mcafee.com/enterprise/ja-jp/assets/white-papers/fileless-malware-report.pdf" target="_blank" rel="noopener">ファイルレス攻撃解説</a></li></ul><h4 id="FFRI"><a href="#FFRI" class="headerlink" title="FFRI"></a>FFRI</h4><ul><li><a href="https://www.hitachi-systems.com/-/media/solution/s105/yarai/download/ffri_WP.pdf" target="_blank" rel="noopener">「先読みする防御」が⾒据える次の脅威 ファイルレスマルウェアから守るセキュリティ技術</a></li></ul><h4 id="WatchGuard"><a href="#WatchGuard" class="headerlink" title="WatchGuard"></a>WatchGuard</h4><ul><li><a href="https://www.watchguard.co.jp/resource-center/2019-predictions" target="_blank" rel="noopener">自己増殖型ファイルレス「vaporworms」攻撃</a></li></ul><h2 id="ファイルレスマルウェアのレポート"><a href="#ファイルレスマルウェアのレポート" class="headerlink" title="ファイルレスマルウェアのレポート"></a>ファイルレスマルウェアのレポート</h2><h4 id="TrendMicro"><a href="#TrendMicro" class="headerlink" title="TrendMicro"></a>TrendMicro</h4><ul><li><p><a href="https://blog.trendmicro.co.jp/archives/15653" target="_blank" rel="noopener">より高度な「ファイルレス活動」を実現した一連のマルウェアを確認</a></p></li><li><p><a href="https://blog.trendmicro.co.jp/archives/15818" target="_blank" rel="noopener">更新：「JS_POWMET」の「ファイルレス活動」、感染経路が USB と特定</a></p></li></ul><h2 id="ファイルレスマルウェア対策"><a href="#ファイルレスマルウェア対策" class="headerlink" title="ファイルレスマルウェア対策"></a>ファイルレスマルウェア対策</h2><ul><li><p><a href="https://blueplanet-works.com/contents/img/pdf/Fileless_Malware_whitepapers_rev1.pdf" target="_blank" rel="noopener">10分でわかるAppGuard：ファイルレス攻撃から守る仕組み</a></p></li><li><p><a href="https://www.checkpoint.co.jp/threat-cloud/2018/09/file-less-malware-no-match-for-sandblast-agent.html" target="_blank" rel="noopener">台頭するファイルレス・マルウェアも検出可能なCheck Point SandBlast Agent 新機能「Behavioral Guard」を使い、不正なふるまいを検出</a></p></li></ul><p>(to be updated)</p>]]></content>
     
