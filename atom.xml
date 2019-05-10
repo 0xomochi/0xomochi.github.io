@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xomochi.github.io/"/>
-  <updated>2019-03-20T04:24:07.028Z</updated>
+  <updated>2019-03-20T05:13:54.875Z</updated>
   <id>http://0xomochi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://0xomochi.github.io/2019/03/19/liveusb/"/>
     <id>http://0xomochi.github.io/2019/03/19/liveusb/</id>
     <published>2019-03-19T10:31:40.000Z</published>
-    <updated>2019-03-20T04:24:07.028Z</updated>
+    <updated>2019-03-20T05:13:54.875Z</updated>
     
     <content type="html"><![CDATA[<h2 id="live-USBとは"><a href="#live-USBとは" class="headerlink" title="live USBとは"></a>live USBとは</h2><p>今回作ったlive USBはWindows機の元から入ってるライセンスを保持しつつ、同じPCを使ってUSBからUbuntuを起動するということができるもの。<br>使っているWindows機のOSを潰さずにUbuntuをさくさく使えるようにしたかったため、VirtualBoxなどの仮想環境構築ツールではなくlive USBを選択した。  </p><h2 id="必要なもの"><a href="#必要なもの" class="headerlink" title="必要なもの"></a>必要なもの</h2><ul><li>Ubuntuのisoイメージ<ul><li>公式から最新版をダウンロードしてくれば良い(無料)</li></ul></li><li>Ubuntuのisoイメージを入れるためのUSB<ul><li>2GBあれば足りる</li><li>live USBができたら用無しなのでフォーマットして再度使える</li></ul></li><li>Universal USB Installer<ul><li>これもfreeでダウンロードしてくれば良い</li></ul></li><li>Ubuntuを実際に起動するためのUSB<ul><li>最低でも16GB</li><li>ファイルなどを保存しておきたいなら64GB</li><li>今回は1TBSSDを使った(すいすい動くのでおすすめ)</li></ul></li></ul><h2 id="Ubuntu-Desktopのダウンロード"><a href="#Ubuntu-Desktopのダウンロード" class="headerlink" title="Ubuntu Desktopのダウンロード"></a>Ubuntu Desktopのダウンロード</h2><p>以下のリンクから最新バージョンの<code>Ubuntu 18.04.2 LTS</code>をダウンロードしてくる。<br><code>Download</code>をクリックすれば.isoイメージが降ってくる。<br>ダウンロードが完了したら、<strong><em>Ubuntuの.isoイメージを入れるためのUSB(容量小)</em></strong> に移動しておく。  </p><ul><li><a href="https://www.ubuntu.com/download/desktop" target="_blank" rel="noopener">Ubuntu Desktop Download Link</a></li></ul><h2 id="Universal-USB-Installerのダウンロード"><a href="#Universal-USB-Installerのダウンロード" class="headerlink" title="Universal USB Installerのダウンロード"></a>Universal USB Installerのダウンロード</h2><p><code>Universal USB Installer</code>は、USBなどのドライブにLinuxインストーラを作成できるアプリケーション。  </p><ul><li><a href="https://universal-usb-installer.jp.uptodown.com/windows" target="_blank" rel="noopener">Universal USB Installer Download Link</a></li></ul><blockquote><p><strong><em>Ubuntuの.isoイメージを入れるためのUSB(容量小)</em></strong> が刺さっている状態</p></blockquote><p>以下のようなUIになっていて、</p><ul><li>Step1: <code>Ubuntu</code>を選択</li><li>Step2: <code>Browse</code>から<code>ubuntu-18.04.2-desktop-amd64.iso</code>を選択</li><li>Step3: <strong><em>Ubuntuを実際に起動するためのUSB</em></strong> を選択</li></ul><p><img src="https://img.utdstc.com/screen/1/universal-usb-installer-001.jpg:s" title="setup"></p><p><code>Create</code>を押して以下のような画面になれば完了。</p><p><img src="https://img.utdstc.com/screen/1/universal-usb-installer-002.jpg:s" title="finish installation"></p><blockquote><p><strong><em>Ubuntuを実際に起動するためのUSB</em></strong> を刺しておく。</p></blockquote><p>(to be updated)</p>]]></content>
     
@@ -52,7 +52,7 @@
     <link href="http://0xomochi.github.io/2019/02/27/VENOM%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"/>
     <id>http://0xomochi.github.io/2019/02/27/VENOMについて/</id>
     <published>2019-02-27T09:47:44.000Z</published>
-    <updated>2019-03-18T02:11:38.257Z</updated>
+    <updated>2019-03-23T05:54:42.105Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>VENOM = Virtualized Environment Neglected Operations Manipulation</em></strong></p><p>VENOMとは、KVM/QEMU及びXenハイパーバイザーのQEMUコンポーネントに実装されるフロッピーディスクコントローラー(FDC)エミュレーションに影響を与えるバッファオーバーフローの脆弱性のことで、<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-3456" target="_blank" rel="noopener">CVE-2015-3456</a>が割り振られている。  </p><p>この脆弱性を悪用することで、ゲストをクラッシュさせる、ゲストに対応するホストのQEMUプロセスの権限を用いてホストで任意のコードを実行することが可能となる。<br>ホストのQEMUのプロセスの特権やリソースアクセスを制限するために使用される<a href="http://enakai00.hatenablog.com/entry/20101221/1292917366" target="_blank" rel="noopener">sVirt</a>および<a href="http://mmi.hatenablog.com/entry/2016/08/01/044000" target="_blank" rel="noopener">seccomp機能</a>(Secure Computingの略らしい)により、VENOMの悪用による影響が軽減される可能性がある。  </p><p>回避策としては、信頼されていないユーザにゲスト内の管理者特権を付与しないようにすることが挙げられる。  </p><p>[用語]<br>・<strong><em>sVirt</em></strong> = 仮想マシンのプロセスからホスト上の不要なリソースへのアクセスを禁止するためにKVMの仮想マシンプロセスに設定されるもの(svirt_tタイプが設定される)。これによってホストマシンと仮想マシンの分離が可能となっている。これに加えてlibvirtによってKVMに関連するプロセスやファイルにMCSのカテゴリラベルを付与することによって、ホストマシンと仮想マシン間だけでなく、仮想マシン間の分離も可能となる。<br>・<strong><em>seccomp</em></strong> = Secure Computingの略。Linux上で仮想環境を実現するためにプロセスのシステムコール発行を制限する機能。  </p><h2 id="VM-escape"><a href="#VM-escape" class="headerlink" title="VM escape"></a>VM escape</h2><p>以下の2種類の脆弱性を悪用することでVMエスケープが成功してしまう。<br>・<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5165" target="_blank" rel="noopener">CVE-2015-5165</a><br>・<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7504" target="_blank" rel="noopener">CVE-2015-7504</a><br><code>CVE-2015-5165</code>は<code>memory leak脆弱性</code>、<code>CVE-2015-7504</code>は<code>heap-based overflow脆弱性</code>である。  </p><h2 id="CVE情報について"><a href="#CVE情報について" class="headerlink" title="CVE情報について"></a>CVE情報について</h2><p><strong><em>CVE = Common Vulnerabilities and Exposures</em></strong><br>CVE情報は以下のサイトを参考にすると良い。  </p><ul><li><a href="http://cve.mitre.org/" target="_blank" rel="noopener">CVE識別番号管理サイト</a></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>・<a href="https://venom.crowdstrike.com/" target="_blank" rel="noopener">https://venom.crowdstrike.com/</a><br>・<a href="https://threatpost.com/venom-flaw-in-virtualization-software-could-lead-to-vm-escapes-data-theft/112772/" target="_blank" rel="noopener">https://threatpost.com/venom-flaw-in-virtualization-software-could-lead-to-vm-escapes-data-theft/112772/</a><br>・<a href="https://access.redhat.com/ja/articles/1446873" target="_blank" rel="noopener">https://access.redhat.com/ja/articles/1446873</a>  </p><p>(to be updated)</p>]]></content>
     
@@ -103,6 +103,27 @@
       <category term="Volatility Framework" scheme="http://0xomochi.github.io/tags/Volatility-Framework/"/>
     
       <category term="memory forensic" scheme="http://0xomochi.github.io/tags/memory-forensic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://0xomochi.github.io/2019/02/12/anti-virus/"/>
+    <id>http://0xomochi.github.io/2019/02/12/anti-virus/</id>
+    <published>2019-02-12T07:07:33.803Z</published>
+    <updated>2019-05-10T06:44:19.901Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Anti-Virus-Software-備忘録"><a href="#Anti-Virus-Software-備忘録" class="headerlink" title="Anti-Virus Software 備忘録"></a>Anti-Virus Software 備忘録</h1><h2 id="McAfee"><a href="#McAfee" class="headerlink" title="McAfee"></a>McAfee</h2><p><a href="https://blogs.mcafee.jp/" target="_blank" rel="noopener">McAfee公式ブログ</a><br><a href="https://www.mcafee.com/enterprise/ja-jp/products/a-z.html" target="_blank" rel="noopener">McAfee製品一覧</a></p><h3 id="McAfee-Endpoint-Security"><a href="#McAfee-Endpoint-Security" class="headerlink" title="McAfee Endpoint Security"></a>McAfee Endpoint Security</h3><p>総合的なエンドポイントセキュリティ対策ソフトには<a href="https://www.mcafee.com/enterprise/ja-jp/products/endpoint-security.html" target="_blank" rel="noopener">McAfee Endpoint Security</a>がある。<br>コンシューマ向けではないが、おそらくこの製品がMcAfee製品の中で最も網羅的に脅威に対応できるものであると思われる。<br>このような総合セキュリティ対策ソフトは従来型のウイルス対策ソフトのようにシグネチャによるマルウェア検知しかしないものとは異なり、ファイルレスマルウェアの検知も可能とされている。<br>プラットフォームはWindowsOS, Windows Serverに対応しており、その他OSには対応していない。</p><blockquote><p>&lt;補足&gt;<br>EDR(Endpoint Detection and Response)製品はエンドポイントで脅威の「検知」を行い「対応」をサポートする製品で、監視・情報収集、機械学習・動作分析により、エンドポイントに侵入してきた未知のマルウェアの検知・対応策として有効です。<br>例えば、PowerShellの接続と同時にWordが起動したとしたら疑わしいため、そのプロセスを隔離・停止するなど怪しい行動を阻止するような措置をとるなど対策が進んでいます。</p><p>引用: <a href="https://blogs.mcafee.jp/what-is-fileless-malware#1" target="_blank" rel="noopener">ファイルレスマルウェアの脅威！仕組みと感染経路からみる実践的対策</a></p></blockquote><h4 id="McAfee-Endpoint-Securityの機能"><a href="#McAfee-Endpoint-Securityの機能" class="headerlink" title="McAfee Endpoint Securityの機能"></a>McAfee Endpoint Securityの機能</h4><ol><li>コアの脅威対策<br>マルウェア対策、エクスプロイト防止、ファイヤウォールなどの基本的なセキュリティ機能。</li><li>機械学習<br>静的な動作属性に基づいて不正なコードを識別する。</li><li>アプリケーションの隔離<br>動作をブロックすることで不審なファイルやゼロデイマルウェアの影響を限定する。</li><li><a href="https://www.mcafee.com/enterprise/ja-jp/assets/data-sheets/ds-active-response.pdf" target="_blank" rel="noopener">Endpoint Detection and Response(EDR)</a><br>統合・自動化された適応型のEDR技術でワンクリックでインシデント対応が可能。</li></ol><h2 id="Symantec"><a href="#Symantec" class="headerlink" title="Symantec"></a>Symantec</h2><p><a href="https://www.symantec.com/ja/jp/security-center/threats" target="_blank" rel="noopener">脅威情報</a><br><a href="https://www.symantec.com/ja/jp/products#products-az" target="_blank" rel="noopener">Symantec 製品一覧</a><br><a href="https://jp.norton.com/" target="_blank" rel="noopener">Norton</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Anti-Virus-Software-備忘録&quot;&gt;&lt;a href=&quot;#Anti-Virus-Software-備忘録&quot; class=&quot;headerlink&quot; title=&quot;Anti-Virus Software 備忘録&quot;&gt;&lt;/a&gt;Anti-Virus Softwa
+      
+    
+    </summary>
+    
     
   </entry>
   
