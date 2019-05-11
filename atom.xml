@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xomochi.github.io/"/>
-  <updated>2019-05-10T06:58:30.676Z</updated>
+  <updated>2019-05-11T03:16:17.860Z</updated>
   <id>http://0xomochi.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>論文の読み方を見直したら割とうまくいった話</title>
+    <link href="http://0xomochi.github.io/2019/05/11/howto-read-paper/"/>
+    <id>http://0xomochi.github.io/2019/05/11/howto-read-paper/</id>
+    <published>2019-05-11T02:58:21.000Z</published>
+    <updated>2019-05-11T03:16:17.860Z</updated>
+    
+    <content type="html"><![CDATA[<p>論文を最低でも一日一本読むことを目標としていたのだが、三日坊主になりがちで続かないので、以前から気になっていた、論文の効率の良い読み進め方、継続方法を実践してみた。</p><p>素早く疲れることなく論文が読み進められること、後から見返してどのような論文であったかを思い出せること、を目指した。<br>後から見返してどのような論文であったかが一目で分かれば研究で振り返りたい際に役立つだけでなく、他の研究メンバーに論文を紹介するときにも役立つだろう。<br><br></p><p>実践したのは落合陽一氏の「先端技術とメディア表現1 #FTMA15」p65の図にあるポイントを意識しながら論文を読むことだ。</p><p>以下はは実験論文を読む際のポイントとして挙げられている。<br>・どんなもの？(=どんな研究？)<br>・先行研究と比べてどこがすごい？<br>・技術や手法のキモはどこ？<br>・どうやって有効だと検証した？<br>・議論はある？<br>・次に読むべき論文は？<br>これら6点に着目して論文から問いの答えを抽出し、下のような一枚のスライドにまとめる。</p><p><img src="https://image.slidesharecdn.com/random-150503101608-conversion-gate02/95/1-ftma15-65-638.jpg?cb=1430648213"></p><p>(出典: <a href="https://www.slideshare.net/Ochyai/1-ftma15/65" target="_blank" rel="noopener">https://www.slideshare.net/Ochyai/1-ftma15/65</a>)</p><p>論文を読む順番は以下の通りにした。<br>この方法を試す前から時間がないときはアブストラクト→結論の順に読んでいたのでそこは今まで通りに。</p><ol><li>アブストラクト(研究概要)</li><li>結論(研究のまとめ)</li><li>イントロダクション(対象テーマの背景や問題点とその重要性)</li><li>関連研究(その問題に関する先行研究、それらの問題点や未解決事項)</li><li>本論(研究で提案した手法の概要と詳細)</li><li>検証・評価(提案した手法)</li></ol><p>そして最後にざっと全体を読み返しながらまとめスライドを作成する。</p><p><br></p><p>このスライドにまとめる作業を効率的にするためにも、アブストラクトから読んでいく際に先程示した6点を意識しながら読む必要がある。</p><p>・どんなもの(研究)？→アブストラクト<br>・先行研究と比べてどこがすごい？→関連研究と本論<br>・技術や手法のキモはどこ？→本論<br>・どうやって有効だと検証した？→検証・評価<br>・議論はある？→結論<br>・次に読むべき論文は？→参考文献(引用されている論文など)</p><p><br></p><p>上で紹介した方法で論文を読んでみた。<br>10ページほどの論文を各5分程度度読み切る(時間を決める)ことを目標に読み進めると効率的にでき、なおかつ達成感も得られるのでよさそうである。<br>引き続きこの方法で論文を読み貯めていこうと思う。</p><p><br></p><p>&lt;余談&gt;<br>文献をまとめておく方法としては<a href="https://readingmonkey.blog.fc2.com/blog-entry-684.html" target="_blank" rel="noopener">レビュー・マトリクス</a>というものもあるらしい。<br>集めた文献を年代別に並べ、文献から抽出するトピックを決める。<br>それらを表としてまとめることで年代別に該当トピックがどのように研究されてきたかが一目でわかるようになる。<br>スライドにまとめるだけでなく、このレビュー・マトリクスの手法に沿って表にまとめておくのもいいのかもしれない。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.slideshare.net/Ochyai/1-ftma15/1" target="_blank" rel="noopener">落合陽一 Slide Share 「先端技術とメディア表現1 #FTMA15」</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;論文を最低でも一日一本読むことを目標としていたのだが、三日坊主になりがちで続かないので、以前から気になっていた、論文の効率の良い読み進め方、継続方法を実践してみた。&lt;/p&gt;
+&lt;p&gt;素早く疲れることなく論文が読み進められること、後から見返してどのような論文であったかを思い出せ
+      
+    
+    </summary>
+    
+      <category term="research" scheme="http://0xomochi.github.io/categories/research/"/>
+    
+    
+      <category term="reading papers" scheme="http://0xomochi.github.io/tags/reading-papers/"/>
+    
+  </entry>
   
   <entry>
     <title>ファイルレスマルウェア備忘録</title>

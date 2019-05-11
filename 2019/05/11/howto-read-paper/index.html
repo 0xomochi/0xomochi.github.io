@@ -8,12 +8,12 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    References | MalBox
+    論文の読み方を見直したら割とうまくいった話 | MalBox
   </title>
   <meta name="description" content="omochi&#39;s tech blog">
   
   <meta name="keywords" content="
-  references
+  reading papers
   ">
   
   <meta name="author" content="0xomochi">
@@ -136,22 +136,38 @@
     <i class="fa fa-user-o"></i>
     0xomochi
 
-    <span class="post-date float-right" title="{{moment(1536416385000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1557543501000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1536416385000).fromNow()}}
+      {{moment(1557543501000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>References</h1>
-    <p>(To be updated)</p>
-<h2 id="Analysis-Report"><a href="#Analysis-Report" class="headerlink" title="Analysis Report"></a>Analysis Report</h2><p>・<a href="http://www.malware-traffic-analysis.net/" target="_blank" rel="noopener">Malware Traffic Analysis.net</a><br>・<a href="http://blog.netlab.360.com/" target="_blank" rel="noopener">Network Security Research Lab at 360</a><br>・<a href="https://blog.ensilo.com/" target="_blank" rel="noopener">ENSILO BLOG</a><br>・<a href="https://www.lastline.com/labs/blog/" target="_blank" rel="noopener">Lastline Labs Blog</a><br>・<a href="http://www.broadanalysis.com/" target="_blank" rel="noopener">BROADANALYSIS</a><br>・<a href="https://malwarebreakdown.com/" target="_blank" rel="noopener">Malware Breakdown</a><br>・<a href="https://zerophagemalware.com/" target="_blank" rel="noopener">Zerophage Malware</a><br>・<a href="https://blogs.yahoo.co.jp/fireflyframer" target="_blank" rel="noopener">無題な濃いログ</a>  </p>
-<h2 id="Get-malware"><a href="#Get-malware" class="headerlink" title="Get malware"></a>Get malware</h2><p>You can download live malware from sites below.<br>Please download at your own risk.<br>・<a href="https://www.hybrid-analysis.com/" target="_blank" rel="noopener">Hybrid Analysis</a><br>・<a href="http://vxvault.net/ViriList.php" target="_blank" rel="noopener">VXVault</a><br>・<a href="http://www.malware-traffic-analysis.net/" target="_blank" rel="noopener">Malware Traffic Analysis</a><br>・<a href="https://app.any.run/" target="_blank" rel="noopener">any.run</a><br>・<a href="https://malshare.com/" target="_blank" rel="noopener">MalShare</a><br>・<a href="http://contagiodump.blogspot.com/" target="_blank" rel="noopener">contagio</a>  </p>
-<h2 id="Get-tools"><a href="#Get-tools" class="headerlink" title="Get tools"></a>Get tools</h2><p>・<a href="https://github.com/0xomochi/tools/tree/master/packer" target="_blank" rel="noopener">GitHub @0xomochi tools/packer</a><br>・<a href="https://github.com/0xomochi/tools/tree/master/packer_detector" target="_blank" rel="noopener">GitHub @0xomochi tools/packer_detector</a></p>
-<h2 id="Twitter"><a href="#Twitter" class="headerlink" title="Twitter"></a>Twitter</h2><p>These accounts are useful for collecting information about malware and variours vulnerabilities.<br>・<a href="https://twitter.com/piyokango" target="_blank" rel="noopener">@piyokango</a><br>・<a href="https://twitter.com/HybridAnalysis" target="_blank" rel="noopener">@HybridAnalysis</a><br>・<a href="https://twitter.com/you0708" target="_blank" rel="noopener">@you0708</a><br>・<a href="https://twitter.com/nao_sec" target="_blank" rel="noopener">@nao_sec</a><br>・<a href="https://twitter.com/01ra66it" target="_blank" rel="noopener">@01ra66it</a><br>・<a href="https://twitter.com/anyrun_app" target="_blank" rel="noopener">@anyrun_app</a><br>・<a href="https://twitter.com/VK_Intel" target="_blank" rel="noopener">@VK_Intel</a><br>・<a href="https://twitter.com/WDSecurity" target="_blank" rel="noopener">@WDSecurity</a><br>・<a href="https://twitter.com/malwrhunterteam" target="_blank" rel="noopener">@malwrhunterteam</a>  </p>
-<h2 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h2><p>Most are written in Jaqpanese, sorry.<br>・<a href="">アナライジングマルウェア</a><br>・<a href="">サイバーセキュリティプログラミング</a>  </p>
-<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><p>Good references to understand the overall picture of malware analysis.<br>・<a href="https://hackmd.io/s/S1kLEr5x" target="_blank" rel="noopener">マルウェア解析に必要な素養</a>  </p>
-<p>About initial response when your pc was infected.<br>・<a href="https://www.slideshare.net/IIJ_PR/ss-121246301" target="_blank" rel="noopener">マルウェア感染！！そのときあなたがやるべきこと、やってはいけないこと</a>  </p>
+    <h1>論文の読み方を見直したら割とうまくいった話</h1>
+    <p>論文を最低でも一日一本読むことを目標としていたのだが、三日坊主になりがちで続かないので、以前から気になっていた、論文の効率の良い読み進め方、継続方法を実践してみた。</p>
+<p>素早く疲れることなく論文が読み進められること、後から見返してどのような論文であったかを思い出せること、を目指した。<br>後から見返してどのような論文であったかが一目で分かれば研究で振り返りたい際に役立つだけでなく、他の研究メンバーに論文を紹介するときにも役立つだろう。<br><br></p>
+<p>実践したのは落合陽一氏の「先端技術とメディア表現1 #FTMA15」p65の図にあるポイントを意識しながら論文を読むことだ。</p>
+<p>以下はは実験論文を読む際のポイントとして挙げられている。<br>・どんなもの？(=どんな研究？)<br>・先行研究と比べてどこがすごい？<br>・技術や手法のキモはどこ？<br>・どうやって有効だと検証した？<br>・議論はある？<br>・次に読むべき論文は？<br>これら6点に着目して論文から問いの答えを抽出し、下のような一枚のスライドにまとめる。</p>
+<p><img src="https://image.slidesharecdn.com/random-150503101608-conversion-gate02/95/1-ftma15-65-638.jpg?cb=1430648213"></p>
+<p>(出典: <a href="https://www.slideshare.net/Ochyai/1-ftma15/65" target="_blank" rel="noopener">https://www.slideshare.net/Ochyai/1-ftma15/65</a>)</p>
+<p>論文を読む順番は以下の通りにした。<br>この方法を試す前から時間がないときはアブストラクト→結論の順に読んでいたのでそこは今まで通りに。</p>
+<ol>
+<li>アブストラクト(研究概要)</li>
+<li>結論(研究のまとめ)</li>
+<li>イントロダクション(対象テーマの背景や問題点とその重要性)</li>
+<li>関連研究(その問題に関する先行研究、それらの問題点や未解決事項)</li>
+<li>本論(研究で提案した手法の概要と詳細)</li>
+<li>検証・評価(提案した手法)</li>
+</ol>
+<p>そして最後にざっと全体を読み返しながらまとめスライドを作成する。</p>
+<p><br></p>
+<p>このスライドにまとめる作業を効率的にするためにも、アブストラクトから読んでいく際に先程示した6点を意識しながら読む必要がある。</p>
+<p>・どんなもの(研究)？→アブストラクト<br>・先行研究と比べてどこがすごい？→関連研究と本論<br>・技術や手法のキモはどこ？→本論<br>・どうやって有効だと検証した？→検証・評価<br>・議論はある？→結論<br>・次に読むべき論文は？→参考文献(引用されている論文など)</p>
+<p><br></p>
+<p>上で紹介した方法で論文を読んでみた。<br>10ページほどの論文を各5分程度度読み切る(時間を決める)ことを目標に読み進めると効率的にでき、なおかつ達成感も得られるのでよさそうである。<br>引き続きこの方法で論文を読み貯めていこうと思う。</p>
+<p><br></p>
+<p>&lt;余談&gt;<br>文献をまとめておく方法としては<a href="https://readingmonkey.blog.fc2.com/blog-entry-684.html" target="_blank" rel="noopener">レビュー・マトリクス</a>というものもあるらしい。<br>集めた文献を年代別に並べ、文献から抽出するトピックを決める。<br>それらを表としてまとめることで年代別に該当トピックがどのように研究されてきたかが一目でわかるようになる。<br>スライドにまとめるだけでなく、このレビュー・マトリクスの手法に沿って表にまとめておくのもいいのかもしれない。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.slideshare.net/Ochyai/1-ftma15/1" target="_blank" rel="noopener">落合陽一 Slide Share 「先端技術とメディア表現1 #FTMA15」</a></p>
 
   </article>
 </div>
