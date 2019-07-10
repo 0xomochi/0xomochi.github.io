@@ -8,9 +8,13 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    MalBox
+    TLPを守ろう | MalBox
   </title>
   <meta name="description" content="omochi&#39;s tech blog">
+  
+  <meta name="keywords" content="
+  tlp
+  ">
   
   <meta name="author" content="0xomochi">
 
@@ -85,107 +89,71 @@
 </nav>
 
 <div class="main-container">
-  
-
-<div class="container-lg">
-  
-
-<div class="blog-intro">
-  <div class="blog-intro-user">
-    <img class="avatar" src="https://github.com/0xomochi/images/blob/master/0xomochi_icon.jpg?raw=true">
-    <div class="user-name">
-      <div class="blog-title">MalBox</div>
-      <div class="blog-author">0xomochi</div>
-        <ul class="user-detail mobile-only">
-    
-    <li>
-      <i class="fa fa-map-marker"></i>
-      JPN
-    </li>
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://0xomochi.github.io">http://0xomochi.github.io</a>
-    </li>
-  </ul>
-    </div>
-    <div class="blog-description">
-      omochi&#39;s tech blog
-    </div>
-  </div>
-
-  <ul class="user-detail desktop-only">
-    
-    <li>
-      <i class="fa fa-map-marker"></i>
-      JPN
-    </li>
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://0xomochi.github.io">http://0xomochi.github.io</a>
-    </li>
-  </ul>
-
-  <div class="social-media desktop-only">
-    <h4>Social Media</h4>
-    <ul>
-      
-      <li class="social-media-item"><a href="https://github.com/0xomochi" target="_blank"><i class="fa fa-github"></i></a></li>
-      
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 21 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 18 </a>
+      </li>
     </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">MalBox</a>
+      
+      
+    </h2>
   </div>
-</div>
 
-
-  <div class="blog-detail">
-    
-<nav class="blog-detail-nav desktop-only">
-  <ul class="clearfix">
-    <li class="">
-      <a href="/">Overview</a></li>
-    <li class="">
-      <a href="/archives">Posts <span class="counter">15</span></a>
-    </li>
-    <li class="selected">
-      <a href="/categories">Categories <span
-                class="counter">18</span></a></li>
-    <li class="">
-      <a href="/tags">Tags <span class="counter">21</span></a></li>
-  </ul>
-</nav>
-
-    <div class="body-secondary">
-      <ul class="archive-list">
-        
-        <li class="archive-list-item">
-          <h2><a href="/2019/02/27/VENOMについて/">脆弱性VENOMについて</a></h2>
-          <p>
-               VENOM = Virtualized Environment Neglected Operations Manipulation   
- VENOMとは、KVM/QEMU及びXenハイパーバイザーのQEMUコンポーネントに実装されるフロッピーディスクコントローラー(FDC)エミュレーションに...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/VENOM/">VENOM</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/VM-escape/">VM escape</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Vulnerabilities/"><i class="fa fa-folder-open"></i> Vulnerabilities</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 2 </span>
-            <span>Published {{moment(1551260864000).fromNow()}}</span>
-          </div>
-        </li>
-        
-      </ul>
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
     </div>
   </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    0xomochi
+
+    <span class="post-date float-right" title="{{moment(1562696462000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1562696462000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>TLPを守ろう</h1>
+    <p>人々はTLPという考え方の元に情報共有をするべきだと思うので、簡単にまとめておく。<br>TLP遵守は、セキュリティのフィールドにいるなら尚のこと大切。  </p>
+<h2 id="TLPとは？"><a href="#TLPとは？" class="headerlink" title="TLPとは？"></a>TLPとは？</h2>
+  </article>
 </div>
+
+
+    
+
+
+
 
 </div>
 
