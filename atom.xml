@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xomochi.github.io/"/>
-  <updated>2019-11-01T16:00:46.509Z</updated>
+  <updated>2019-11-01T16:02:10.817Z</updated>
   <id>http://0xomochi.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://0xomochi.github.io/2019/07/10/tlp/"/>
     <id>http://0xomochi.github.io/2019/07/10/tlp/</id>
     <published>2019-07-09T18:21:02.000Z</published>
-    <updated>2019-11-01T16:00:46.509Z</updated>
+    <updated>2019-11-01T16:02:10.817Z</updated>
     
-    <content type="html"><![CDATA[<p>人々はTLPという考え方の元に情報共有をするべきだと思うので簡単にまとめておく．<br>TLP遵守は，セキュリティのフィールドにいるなら尚のこと大切．  </p><h2 id="TLPとは？"><a href="#TLPとは？" class="headerlink" title="TLPとは？"></a>TLPとは？</h2><p>機密情報が適切な公開先に共有されるように情報共有の範囲を指定する規格のことをTLP(=Traffic Light Protocol)という．</p><p>※TLPを指定するのは情報を持っている本人or組織orコミュニティであり，第三者ではない．</p><p>TLPは4段階で表されていおり，簡単に言うと次のような範囲が指定されている．</p><ul><li>TLP:RED: 公開禁止，関係者限り</li><li>TLP:AMBER: 公開制限．関係者組織限り</li><li>TLP:GREEN: 公開制限，コミュニティ限り</li><li>TLP:WHITE: 公開制限なし</li></ul><p>ちなみにTLPには段階ごとにカラーコードが決まっている．<br><img src="https://github.com/0xomochi/images/blob/master/tlpcolorcode.png?raw=true" width="100"></p><p>(now editing…)</p>]]></content>
+    <content type="html"><![CDATA[<p>人々はTLPという考え方の元に情報共有をするべきだと思うので簡単にまとめておく．<br>TLP遵守は，セキュリティのフィールドにいるなら尚のこと大切．  </p><h2 id="TLPとは？"><a href="#TLPとは？" class="headerlink" title="TLPとは？"></a>TLPとは？</h2><p>機密情報が適切な公開先に共有されるように情報共有の範囲を指定する規格のことをTLP(=Traffic Light Protocol)という．</p><p>※TLPを指定するのは情報を持っている本人or組織orコミュニティであり，第三者ではない．</p><p>TLPは4段階で表されていおり，簡単に言うと次のような範囲が指定されている．</p><ul><li>TLP:RED: 公開禁止，関係者限り</li><li>TLP:AMBER: 公開制限．関係者組織限り</li><li>TLP:GREEN: 公開制限，コミュニティ限り</li><li>TLP:WHITE: 公開制限なし</li></ul><p>ちなみにTLPには段階ごとにカラーコードが決まっている．<br><img src="https://github.com/0xomochi/images/blob/master/tlpcolorcode.png?raw=true" width="1000"></p><p>(now editing…)</p>]]></content>
     
     <summary type="html">
     
