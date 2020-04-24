@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    脆弱性VENOMについて | MalBox
+  </title>
+  <meta name="description" content="omochi&#39;s tech blog">
+  
+  <meta name="keywords" content="
+  VENOM,VM escape
+  ">
+  
+  <meta name="author" content="0xomochi">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/0xomochi/images/master/0xomochi_icon.jpg">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-125133343-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://github.com/0xomochi/images/blob/master/0xomochi_icon.jpg?raw=true"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 21 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 18 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">MalBox</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    0xomochi
+
+    <span class="post-date float-right" title="{{moment(1551260864000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1551260864000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>脆弱性VENOMについて</h1>
+    <p><strong><em>VENOM = Virtualized Environment Neglected Operations Manipulation</em></strong></p>
+<p>VENOMとは、KVM/QEMU及びXenハイパーバイザーのQEMUコンポーネントに実装されるフロッピーディスクコントローラー(FDC)エミュレーションに影響を与えるバッファオーバーフローの脆弱性のことで、<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-3456" target="_blank" rel="noopener">CVE-2015-3456</a>が割り振られている。  </p>
+<p>この脆弱性を悪用することで、ゲストをクラッシュさせる、ゲストに対応するホストのQEMUプロセスの権限を用いてホストで任意のコードを実行することが可能となる。<br>ホストのQEMUのプロセスの特権やリソースアクセスを制限するために使用される<a href="http://enakai00.hatenablog.com/entry/20101221/1292917366" target="_blank" rel="noopener">sVirt</a>および<a href="http://mmi.hatenablog.com/entry/2016/08/01/044000" target="_blank" rel="noopener">seccomp機能</a>(Secure Computingの略らしい)により、VENOMの悪用による影響が軽減される可能性がある。  </p>
+<p>回避策としては、信頼されていないユーザにゲスト内の管理者特権を付与しないようにすることが挙げられる。  </p>
+<p>[用語]<br>・<strong><em>sVirt</em></strong> = 仮想マシンのプロセスからホスト上の不要なリソースへのアクセスを禁止するためにKVMの仮想マシンプロセスに設定されるもの(svirt_tタイプが設定される)。これによってホストマシンと仮想マシンの分離が可能となっている。これに加えてlibvirtによってKVMに関連するプロセスやファイルにMCSのカテゴリラベルを付与することによって、ホストマシンと仮想マシン間だけでなく、仮想マシン間の分離も可能となる。<br>・<strong><em>seccomp</em></strong> = Secure Computingの略。Linux上で仮想環境を実現するためにプロセスのシステムコール発行を制限する機能。  </p>
+<h2 id="VM-escape"><a href="#VM-escape" class="headerlink" title="VM escape"></a>VM escape</h2><p>以下の2種類の脆弱性を悪用することでVMエスケープが成功してしまう。<br>・<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5165" target="_blank" rel="noopener">CVE-2015-5165</a><br>・<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7504" target="_blank" rel="noopener">CVE-2015-7504</a><br><code>CVE-2015-5165</code>は<code>memory leak脆弱性</code>、<code>CVE-2015-7504</code>は<code>heap-based overflow脆弱性</code>である。  </p>
+<h2 id="CVE情報について"><a href="#CVE情報について" class="headerlink" title="CVE情報について"></a>CVE情報について</h2><p><strong><em>CVE = Common Vulnerabilities and Exposures</em></strong><br>CVE情報は以下のサイトを参考にすると良い。  </p>
+<ul>
+<li><a href="http://cve.mitre.org/" target="_blank" rel="noopener">CVE識別番号管理サイト</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>・<a href="https://venom.crowdstrike.com/" target="_blank" rel="noopener">https://venom.crowdstrike.com/</a><br>・<a href="https://threatpost.com/venom-flaw-in-virtualization-software-could-lead-to-vm-escapes-data-theft/112772/" target="_blank" rel="noopener">https://threatpost.com/venom-flaw-in-virtualization-software-could-lead-to-vm-escapes-data-theft/112772/</a><br>・<a href="https://access.redhat.com/ja/articles/1446873" target="_blank" rel="noopener">https://access.redhat.com/ja/articles/1446873</a>  </p>
+<p>(to be updated)</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://0xomochi.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 0xomochi</li>
+      <li><a href="http://0xomochi.github.io">Home</a></li>
+      
+      <li><a href="https://github.com/0xomochi">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

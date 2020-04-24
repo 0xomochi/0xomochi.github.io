@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    アンチウイルス備忘録 | MalBox
+  </title>
+  <meta name="description" content="omochi&#39;s tech blog">
+  
+  <meta name="keywords" content="
+  anti-virus
+  ">
+  
+  <meta name="author" content="0xomochi">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/0xomochi/images/master/0xomochi_icon.jpg">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-125133343-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://github.com/0xomochi/images/blob/master/0xomochi_icon.jpg?raw=true"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 21 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 18 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">MalBox</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    0xomochi
+
+    <span class="post-date float-right" title="{{moment(1557470912000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1557470912000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>アンチウイルス備忘録</h1>
+    <h2 id="McAfee"><a href="#McAfee" class="headerlink" title="McAfee"></a>McAfee</h2><p><a href="https://blogs.mcafee.jp/" target="_blank" rel="noopener">McAfee公式ブログ</a><br><a href="https://www.mcafee.com/enterprise/ja-jp/products/a-z.html" target="_blank" rel="noopener">McAfee製品一覧</a></p>
+<h3 id="McAfee-Endpoint-Security"><a href="#McAfee-Endpoint-Security" class="headerlink" title="McAfee Endpoint Security"></a>McAfee Endpoint Security</h3><p>総合的なエンドポイントセキュリティ対策ソフトには<a href="https://www.mcafee.com/enterprise/ja-jp/products/endpoint-security.html" target="_blank" rel="noopener">McAfee Endpoint Security</a>がある。<br>コンシューマ向けではないが、おそらくこの製品がMcAfee製品の中で最も網羅的に脅威に対応できるものであると思われる。<br>このような総合セキュリティ対策ソフトは従来型のウイルス対策ソフトのようにシグネチャによるマルウェア検知しかしないものとは異なり、ファイルレスマルウェアの検知も可能とされている。<br>プラットフォームはWindowsOS, Windows Serverに対応しており、その他OSには対応していない。</p>
+<blockquote>
+<p>&lt;補足&gt;<br>EDR(Endpoint Detection and Response)製品はエンドポイントで脅威の「検知」を行い「対応」をサポートする製品で、監視・情報収集、機械学習・動作分析により、エンドポイントに侵入してきた未知のマルウェアの検知・対応策として有効です。<br>例えば、PowerShellの接続と同時にWordが起動したとしたら疑わしいため、そのプロセスを隔離・停止するなど怪しい行動を阻止するような措置をとるなど対策が進んでいます。</p>
+<p>引用: <a href="https://blogs.mcafee.jp/what-is-fileless-malware#1" target="_blank" rel="noopener">ファイルレスマルウェアの脅威！仕組みと感染経路からみる実践的対策</a></p>
+</blockquote>
+<h4 id="McAfee-Endpoint-Securityの機能"><a href="#McAfee-Endpoint-Securityの機能" class="headerlink" title="McAfee Endpoint Securityの機能"></a>McAfee Endpoint Securityの機能</h4><ol>
+<li>コアの脅威対策<br>マルウェア対策、エクスプロイト防止、ファイヤウォールなどの基本的なセキュリティ機能。</li>
+<li>機械学習<br>静的な動作属性に基づいて不正なコードを識別する。</li>
+<li>アプリケーションの隔離<br>動作をブロックすることで不審なファイルやゼロデイマルウェアの影響を限定する。</li>
+<li><a href="https://www.mcafee.com/enterprise/ja-jp/assets/data-sheets/ds-active-response.pdf" target="_blank" rel="noopener">Endpoint Detection and Response(EDR)</a><br>統合・自動化された適応型のEDR技術でワンクリックでインシデント対応が可能。</li>
+</ol>
+<h2 id="Symantec"><a href="#Symantec" class="headerlink" title="Symantec"></a>Symantec</h2><p><a href="https://www.symantec.com/ja/jp/security-center/threats" target="_blank" rel="noopener">脅威情報</a><br><a href="https://www.symantec.com/ja/jp/products#products-az" target="_blank" rel="noopener">Symantec 製品一覧</a></p>
+<p>(to be updated)</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://0xomochi.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 0xomochi</li>
+      <li><a href="http://0xomochi.github.io">Home</a></li>
+      
+      <li><a href="https://github.com/0xomochi">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
