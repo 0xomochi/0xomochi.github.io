@@ -146,7 +146,7 @@
     <li class="selected">
       <a href="/">Overview</a></li>
     <li class="">
-      <a href="/archives">Posts <span class="counter">16</span></a>
+      <a href="/archives">Posts <span class="counter">17</span></a>
     </li>
     <li class="">
       <a href="/categories">Categories <span
@@ -164,7 +164,27 @@
           <div class="clearfix">
             <h5 class="post-title text-ellipsis">
               <i class="fa fa-bars"></i>
-              <a href="/2020/06/23/bashrc/">.vimrc</a>
+              <a href="/2020/06/23/vimrc/">vimrc</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               call plug#begin(‘~/.vim/plugged’) Plug ‘vim-ruby/
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/vim/"><i class="fa fa-folder-open"></i> vim</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 2 </span>
+            </p>
+          </div>
+        </li>
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2020/06/23/bashrc/">.bashrc</a>
             </h5>
             <p class="post-description text-ellipsis desktop-only">
               
@@ -262,26 +282,6 @@
           </div>
         </li>
         
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2019/03/19/liveusb/">Windows機でlive USBを作ったはなし</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                 live USBとは  今回作ったlive USBはWindows機の元から入ってるライセンス
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/tool/"><i class="fa fa-folder-open"></i> tool</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 3 </span>
-            </p>
-          </div>
-        </li>
-        
       </ul>
       <div class="calendar-container" id="calendar">
   <div class="calendar">
@@ -369,7 +369,7 @@
 
 
 <script>
-  var posts = [{"date":"2019-07-10","title":"TLPを守ろう","url":"http://0xomochi.github.io/2019/07/10/tlp/"},{"date":"2020-06-23","title":".vimrc","url":"http://0xomochi.github.io/2020/06/23/bashrc/"}];
+  var posts = [{"date":"2019-07-10","title":"TLPを守ろう","url":"http://0xomochi.github.io/2019/07/10/tlp/"},{"date":"2020-06-23","title":".bashrc","url":"http://0xomochi.github.io/2020/06/23/bashrc/"},{"date":"2020-06-23","title":"vimrc","url":"http://0xomochi.github.io/2020/06/23/vimrc/"}];
   var today = moment().format('YYYY-MM-DD');
   var oneYearAgo = moment(today).subtract(1, 'years');
   posts = posts.filter(function(post) {
