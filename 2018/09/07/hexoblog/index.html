@@ -97,7 +97,7 @@
         <a href="/archives" class="header-toolbar-left"><i
                   class="fa fa-file-text"></i> Posts </a>
         <a href="/archives"
-           class="header-toolbar-right"> 15 </a>
+           class="header-toolbar-right"> 17 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i
@@ -171,7 +171,9 @@
 <h3 id="好みのThemeを探す"><a href="#好みのThemeを探す" class="headerlink" title="好みのThemeを探す"></a>好みのThemeを探す</h3><p>・<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo themes 公式</a><br>・<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">hexo themes wiki</a><br>・本ブログで使っているtheme -&gt; <a href="https://github.com/sabrinaluo/hexo-theme-replica" target="_blank" rel="noopener">sabrinaluo/hexo-theme-replica</a>  </p>
 <h3 id="デプロイする"><a href="#デプロイする" class="headerlink" title="デプロイする"></a>デプロイする</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin git@github.com:&lt;replace_username&gt;/&lt;replace_username&gt;.github.io.git</span><br><span class="line">$ hexo deploy -g</span><br></pre></td></tr></table></figure>
 
-<p>これで<code>https://&lt;replace_username&gt;.github.io</code>にアクセスしてブログが見れればdone<br>新しい記事を作る手順は本ブログの<a href="https://0xomochi.github.io/2018/09/07/hello-world/">Hello World</a>にある  </p>
+<p>これで<code>https://&lt;replace_username&gt;.github.io</code>にアクセスしてブログが見れればdone<br>新しい記事を作る手順は本ブログの<a href="https://0xomochi.github.io/2018/09/07/hello-world/">Hello World</a>にある<br>hexoで新しい記事を作るには以下を実行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hexo new &quot;my_blog_title&quot;</span><br></pre></td></tr></table></figure>
+
 <h3 id="postの削除方法"><a href="#postの削除方法" class="headerlink" title="postの削除方法"></a>postの削除方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ rm &lt;your_dir&gt;/<span class="built_in">source</span>/_posts/&lt;your_post.md&gt;</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
 <h3 id="categoriesとtagsの404解消"><a href="#categoriesとtagsの404解消" class="headerlink" title="categoriesとtagsの404解消"></a>categoriesとtagsの404解消</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
