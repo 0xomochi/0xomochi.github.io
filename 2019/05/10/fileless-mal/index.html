@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    ファイルレスマルウェア備忘録 | MalBox
+  </title>
+  <meta name="description" content="omochi&#39;s tech blog">
+  
+  <meta name="keywords" content="
+  fileless malware
+  ">
+  
+  <meta name="author" content="0xomochi">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/0xomochi/images/master/0xomochi_icon.jpg">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-125133343-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://github.com/0xomochi/images/blob/master/0xomochi_icon.jpg?raw=true"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 21 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 18 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">MalBox</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    0xomochi
+
+    <span class="post-date float-right" title="{{moment(1557471306000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1557471306000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>ファイルレスマルウェア備忘録</h1>
+    <h2 id="ファイルレスマルウェアに関する記事"><a href="#ファイルレスマルウェアに関する記事" class="headerlink" title="ファイルレスマルウェアに関する記事"></a>ファイルレスマルウェアに関する記事</h2><h4 id="McAfee"><a href="#McAfee" class="headerlink" title="McAfee"></a>McAfee</h4><ul>
+<li><a href="https://blogs.mcafee.jp/what-is-fileless-malware#1" target="_blank" rel="noopener">ファイルレスマルウェアの脅威！仕組みと感染経路からみる実践的対策</a></li>
+<li><a href="https://www.mcafee.com/enterprise/ja-jp/assets/white-papers/fileless-malware-report.pdf" target="_blank" rel="noopener">ファイルレス攻撃解説</a></li>
+</ul>
+<h4 id="FFRI"><a href="#FFRI" class="headerlink" title="FFRI"></a>FFRI</h4><ul>
+<li><a href="https://www.hitachi-systems.com/-/media/solution/s105/yarai/download/ffri_WP.pdf" target="_blank" rel="noopener">「先読みする防御」が⾒据える次の脅威 ファイルレスマルウェアから守るセキュリティ技術</a></li>
+</ul>
+<h4 id="WatchGuard"><a href="#WatchGuard" class="headerlink" title="WatchGuard"></a>WatchGuard</h4><ul>
+<li><a href="https://www.watchguard.co.jp/resource-center/2019-predictions" target="_blank" rel="noopener">自己増殖型ファイルレス「vaporworms」攻撃</a></li>
+</ul>
+<h2 id="ファイルレスマルウェアのレポート"><a href="#ファイルレスマルウェアのレポート" class="headerlink" title="ファイルレスマルウェアのレポート"></a>ファイルレスマルウェアのレポート</h2><h4 id="TrendMicro"><a href="#TrendMicro" class="headerlink" title="TrendMicro"></a>TrendMicro</h4><ul>
+<li><p><a href="https://blog.trendmicro.co.jp/archives/15653" target="_blank" rel="noopener">より高度な「ファイルレス活動」を実現した一連のマルウェアを確認</a></p>
+</li>
+<li><p><a href="https://blog.trendmicro.co.jp/archives/15818" target="_blank" rel="noopener">更新：「JS_POWMET」の「ファイルレス活動」、感染経路が USB と特定</a></p>
+</li>
+</ul>
+<h2 id="ファイルレスマルウェア対策"><a href="#ファイルレスマルウェア対策" class="headerlink" title="ファイルレスマルウェア対策"></a>ファイルレスマルウェア対策</h2><ul>
+<li><p><a href="https://blueplanet-works.com/contents/img/pdf/Fileless_Malware_whitepapers_rev1.pdf" target="_blank" rel="noopener">10分でわかるAppGuard：ファイルレス攻撃から守る仕組み</a></p>
+</li>
+<li><p><a href="https://www.checkpoint.co.jp/threat-cloud/2018/09/file-less-malware-no-match-for-sandblast-agent.html" target="_blank" rel="noopener">台頭するファイルレス・マルウェアも検出可能なCheck Point SandBlast Agent 新機能「Behavioral Guard」を使い、不正なふるまいを検出</a></p>
+</li>
+</ul>
+<p>(to be updated)</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://0xomochi.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 0xomochi</li>
+      <li><a href="http://0xomochi.github.io">Home</a></li>
+      
+      <li><a href="https://github.com/0xomochi">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

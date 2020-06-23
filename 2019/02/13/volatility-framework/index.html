@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Volatility Framework 使い始め | MalBox
+  </title>
+  <meta name="description" content="omochi&#39;s tech blog">
+  
+  <meta name="keywords" content="
+  Volatility Framework,memory forensic
+  ">
+  
+  <meta name="author" content="0xomochi">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/0xomochi/images/master/0xomochi_icon.jpg">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-125133343-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://github.com/0xomochi/images/blob/master/0xomochi_icon.jpg?raw=true"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 21 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 18 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">MalBox</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    0xomochi
+
+    <span class="post-date float-right" title="{{moment(1550037777000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1550037777000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Volatility Framework 使い始め</h1>
+    <h3 id="Volatility-Frameworkとは"><a href="#Volatility-Frameworkとは" class="headerlink" title="Volatility Frameworkとは"></a>Volatility Frameworkとは</h3><p>無料配布オープンソースのメモリフォレンジックツール。pythonが使える環境であればUnix, Windows, MacOSで動作する。ローダンプ、クラッシュダンプ、ハイバーネーションファイルなどのファイルフォーマットに対応している。</p>
+<blockquote>
+<p>The Volatility Framework is a completely open collection of tools,<br>implemented in Python under the GNU General Public License, for the<br>extraction of digital artifacts from volatile memory (RAM) samples.<br>The extraction techniques are performed completely independent of the<br>system being investigated but offer visibilty into the runtime state<br>of the system. The framework is intended to introduce people to the<br>techniques and complexities associated with extracting digital artifacts<br>from volatile memory samples and provide a platform for further work into<br>this exciting area of research.<br>引用: <a href="https://github.com/volatilityfoundation/volatility" target="_blank" rel="noopener">https://github.com/volatilityfoundation/volatility</a></p>
+</blockquote>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>・<a href="https://www.volatilityfoundation.org/" target="_blank" rel="noopener">Volatility Foundation</a><br>・<a href="https://github.com/volatilityfoundation/volatility" target="_blank" rel="noopener">GitHub volatilityfoundation/volatility</a></p>
+<h3 id="インストール方法"><a href="#インストール方法" class="headerlink" title="インストール方法"></a>インストール方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install volatility</span><br></pre></td></tr></table></figure>
+<h3 id="エラー"><a href="#エラー" class="headerlink" title="エラー"></a>エラー</h3><p>以下のエラーが出たら<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dyld: Library not loaded: /usr/<span class="built_in">local</span>/opt/readline/lib/libreadline.7.dylib</span><br><span class="line">  Referenced from: /usr/<span class="built_in">local</span>/bin/awk</span><br></pre></td></tr></table></figure></p>
+<p>次のように実行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ brew uninstall gawk</span><br><span class="line"></span><br><span class="line">$ brew uninstall readline</span><br><span class="line"><span class="comment"># もし上のreadlineの方のコマンドが弾かれた場合は以下を実行</span></span><br><span class="line">$ brew uninstall --ignore-dependencies readline</span><br><span class="line">$ brew uninstall --force readline</span><br></pre></td></tr></table></figure></p>
+<p>次に以下を実行しようとするとPATHについて怒られるとも思うので<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install readline</span><br></pre></td></tr></table></figure></p>
+<p>以下のPATHを<code>~/.bashrc</code>に追加する<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LDFLAGS=<span class="string">"-L/usr/local/opt/openssl/lib"</span></span><br><span class="line"><span class="built_in">export</span> CPPFLAGS=<span class="string">"-I/usr/local/opt/openssl/include"</span></span><br></pre></td></tr></table></figure></p>
+<p><code>~/.bashrc</code>をリロード<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> .bashrc</span><br></pre></td></tr></table></figure></p>
+<p>PATHの追加後、以下のコマンドを実行する<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew install readline</span><br><span class="line">$ brew install gawk</span><br></pre></td></tr></table></figure></p>
+<h3 id="コマンド一覧"><a href="#コマンド一覧" class="headerlink" title="コマンド一覧"></a>コマンド一覧</h3><p><code>$ vol.py -h</code>を実行してヘルプを見る</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">Volatility Foundation Volatility Framework 2.6</span><br><span class="line">Usage: Volatility - A memory forensics analysis platform.</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -h, --<span class="built_in">help</span>            list all available options and their default values.</span><br><span class="line">                        Default values may be <span class="built_in">set</span> <span class="keyword">in</span> the configuration file</span><br><span class="line">                        (/etc/volatilityrc)</span><br><span class="line">  --conf-file=/Users/omochi/.volatilityrc</span><br><span class="line">                        User based configuration file</span><br><span class="line">  -d, --debug           Debug volatility</span><br><span class="line">  --plugins=PLUGINS     Additional plugin directories to use (colon separated)</span><br><span class="line">  --info                Print information about all registered objects</span><br><span class="line">  --cache-directory=/Users/omochi/.cache/volatility</span><br><span class="line">                        Directory <span class="built_in">where</span> cache files are stored</span><br><span class="line">  --cache               Use caching</span><br><span class="line">  --tz=TZ               Sets the (Olson) timezone <span class="keyword">for</span> displaying timestamps</span><br><span class="line">                        using pytz (<span class="keyword">if</span> installed) or tzset</span><br><span class="line">  -f FILENAME, --filename=FILENAME</span><br><span class="line">                        Filename to use when opening an image</span><br><span class="line">  --profile=WinXPSP2x86</span><br><span class="line">                        Name of the profile to load (use --info to see a list</span><br><span class="line">                        of supported profiles)</span><br><span class="line">  -l LOCATION, --location=LOCATION</span><br><span class="line">                        A URN location from <span class="built_in">which</span> to load an address space</span><br><span class="line">  -w, --write           Enable write support</span><br><span class="line">  --dtb=DTB             DTB Address</span><br><span class="line">  --<span class="built_in">shift</span>=SHIFT         Mac KASLR <span class="built_in">shift</span> address</span><br><span class="line">  --output=text         Output <span class="keyword">in</span> this format (support is module specific, see</span><br><span class="line">                        the Module Output Options below)</span><br><span class="line">  --output-file=OUTPUT_FILE</span><br><span class="line">                        Write output <span class="keyword">in</span> this file</span><br><span class="line">  -v, --verbose         Verbose information</span><br><span class="line">  -g KDBG, --kdbg=KDBG  Specify a KDBG virtual address (Note: <span class="keyword">for</span> 64-bit</span><br><span class="line">                        Windows 8 and above this is the address of</span><br><span class="line">                        KdCopyDataBlock)</span><br><span class="line">  --force               Force utilization of suspect profile</span><br><span class="line">  --cookie=COOKIE       Specify the address of nt!ObHeaderCookie (valid <span class="keyword">for</span></span><br><span class="line">                        Windows 10 only)</span><br><span class="line">  -k KPCR, --kpcr=KPCR  Specify a specific KPCR address</span><br><span class="line"></span><br><span class="line">	Supported Plugin Commands:</span><br><span class="line"></span><br><span class="line">		amcache        	Print AmCache information</span><br><span class="line">		apihooks       	Detect API hooks <span class="keyword">in</span> process and kernel memory</span><br><span class="line">		atoms          	Print session and window station atom tables</span><br><span class="line">		atomscan       	Pool scanner <span class="keyword">for</span> atom tables</span><br><span class="line">		auditpol       	Prints out the Audit Policies from HKLM\SECURITY\Policy\PolAdtEv</span><br><span class="line">		bigpools       	Dump the big page pools using BigPagePoolScanner</span><br><span class="line">		bioskbd        	Reads the keyboard buffer from Real Mode memory</span><br><span class="line">		cachedump      	Dumps cached domain hashes from memory</span><br><span class="line">		callbacks      	Print system-wide notification routines</span><br><span class="line">		clipboard      	Extract the contents of the windows clipboard</span><br><span class="line">		cmdline        	Display process <span class="built_in">command</span>-line arguments</span><br><span class="line">		cmdscan        	Extract <span class="built_in">command</span> <span class="built_in">history</span> by scanning <span class="keyword">for</span> _COMMAND_HISTORY</span><br><span class="line">		connections    	Print list of open connections [Windows XP and 2003 Only]</span><br><span class="line">		connscan       	Pool scanner <span class="keyword">for</span> tcp connections</span><br><span class="line">		consoles       	Extract <span class="built_in">command</span> <span class="built_in">history</span> by scanning <span class="keyword">for</span> _CONSOLE_INFORMATION</span><br><span class="line">		crashinfo      	Dump crash-dump information</span><br><span class="line">		deskscan       	Poolscaner <span class="keyword">for</span> tagDESKTOP (desktops)</span><br><span class="line">		devicetree     	Show device tree</span><br><span class="line">		dlldump        	Dump DLLs from a process address space</span><br><span class="line">		dlllist        	Print list of loaded dlls <span class="keyword">for</span> each process</span><br><span class="line">		driverirp      	Driver IRP hook detection</span><br><span class="line">		drivermodule   	Associate driver objects to kernel modules</span><br><span class="line">		driverscan     	Pool scanner <span class="keyword">for</span> driver objects</span><br><span class="line">		dumpcerts      	Dump RSA private and public SSL keys</span><br><span class="line">		dumpfiles      	Extract memory mapped and cached files</span><br><span class="line">		dumpregistry   	Dumps registry files out to disk</span><br><span class="line">		editbox        	Displays information about Edit controls. (Listbox experimental.)</span><br><span class="line">		envars         	Display process environment variables</span><br><span class="line">		eventhooks     	Print details on windows event hooks</span><br><span class="line">		evtlogs        	Extract Windows Event Logs (XP/2003 only)</span><br><span class="line">		filescan       	Pool scanner <span class="keyword">for</span> file objects</span><br><span class="line">		gahti          	Dump the USER handle <span class="built_in">type</span> information</span><br><span class="line">		gditimers      	Print installed GDI timers and callbacks</span><br><span class="line">		gdt            	Display Global Descriptor Table</span><br><span class="line">		getservicesids 	Get the names of services <span class="keyword">in</span> the Registry and <span class="built_in">return</span> Calculated SID</span><br><span class="line">		getsids        	Print the SIDs owning each process</span><br><span class="line">		handles        	Print list of open handles <span class="keyword">for</span> each process</span><br><span class="line">		hashdump       	Dumps passwords hashes (LM/NTLM) from memory</span><br><span class="line">		hibinfo        	Dump hibernation file information</span><br><span class="line">		hivedump       	Prints out a hive</span><br><span class="line">		hivelist       	Print list of registry hives.</span><br><span class="line">		hivescan       	Pool scanner <span class="keyword">for</span> registry hives</span><br><span class="line">		hpakextract    	Extract physical memory from an HPAK file</span><br><span class="line">		hpakinfo       	Info on an HPAK file</span><br><span class="line">		idt            	Display Interrupt Descriptor Table</span><br><span class="line">		iehistory      	Reconstruct Internet Explorer cache / <span class="built_in">history</span></span><br><span class="line">		imagecopy      	Copies a physical address space out as a raw DD image</span><br><span class="line">		imageinfo      	Identify information <span class="keyword">for</span> the image</span><br><span class="line">		impscan        	Scan <span class="keyword">for</span> calls to imported <span class="built_in">functions</span></span><br><span class="line">		joblinks       	Print process job link information</span><br><span class="line">		kdbgscan       	Search <span class="keyword">for</span> and dump potential KDBG values</span><br><span class="line">		kpcrscan       	Search <span class="keyword">for</span> and dump potential KPCR values</span><br><span class="line">		ldrmodules     	Detect unlinked DLLs</span><br><span class="line">		lsadump        	Dump (decrypted) LSA secrets from the registry</span><br><span class="line">		machoinfo      	Dump Mach-O file format information</span><br><span class="line">		malfind        	Find hidden and injected code</span><br><span class="line">		mbrparser      	Scans <span class="keyword">for</span> and parses potential Master Boot Records (MBRs)</span><br><span class="line">		memdump        	Dump the addressable memory <span class="keyword">for</span> a process</span><br><span class="line">		memmap         	Print the memory map</span><br><span class="line">		messagehooks   	List desktop and thread window message hooks</span><br><span class="line">		mftparser      	Scans <span class="keyword">for</span> and parses potential MFT entries</span><br><span class="line">		moddump        	Dump a kernel driver to an executable file sample</span><br><span class="line">		modscan        	Pool scanner <span class="keyword">for</span> kernel modules</span><br><span class="line">		modules        	Print list of loaded modules</span><br><span class="line">		multiscan      	Scan <span class="keyword">for</span> various objects at once</span><br><span class="line">		mutantscan     	Pool scanner <span class="keyword">for</span> mutex objects</span><br><span class="line">		notepad        	List currently displayed notepad text</span><br><span class="line">		objtypescan    	Scan <span class="keyword">for</span> Windows object <span class="built_in">type</span> objects</span><br><span class="line">		patcher        	Patches memory based on page scans</span><br><span class="line">		poolpeek       	Configurable pool scanner plugin</span><br><span class="line">		printkey       	Print a registry key, and its subkeys and values</span><br><span class="line">		privs          	Display process privileges</span><br><span class="line">		procdump       	Dump a process to an executable file sample</span><br><span class="line">		pslist         	Print all running processes by following the EPROCESS lists</span><br><span class="line">		psscan         	Pool scanner <span class="keyword">for</span> process objects</span><br><span class="line">		pstree         	Print process list as a tree</span><br><span class="line">		psxview        	Find hidden processes with various process listings</span><br><span class="line">		qemuinfo       	Dump Qemu information</span><br><span class="line">		raw2dmp        	Converts a physical memory sample to a windbg crash dump</span><br><span class="line">		screenshot     	Save a pseudo-screenshot based on GDI windows</span><br><span class="line">		servicediff    	List Windows services (ala Plugx)</span><br><span class="line">		sessions       	List details on _MM_SESSION_SPACE (user logon sessions)</span><br><span class="line">		shellbags      	Prints ShellBags info</span><br><span class="line">		shimcache      	Parses the Application Compatibility Shim Cache registry key</span><br><span class="line">		shutdowntime   	Print ShutdownTime of machine from registry</span><br><span class="line">		sockets        	Print list of open sockets</span><br><span class="line">		sockscan       	Pool scanner <span class="keyword">for</span> tcp socket objects</span><br><span class="line">		ssdt           	Display SSDT entries</span><br><span class="line">		strings        	Match physical offsets to virtual addresses (may take a <span class="keyword">while</span>, VERY verbose)</span><br><span class="line">		svcscan        	Scan <span class="keyword">for</span> Windows services</span><br><span class="line">		symlinkscan    	Pool scanner <span class="keyword">for</span> symlink objects</span><br><span class="line">		thrdscan       	Pool scanner <span class="keyword">for</span> thread objects</span><br><span class="line">		threads        	Investigate _ETHREAD and _KTHREADs</span><br><span class="line">		timeliner      	Creates a timeline from various artifacts <span class="keyword">in</span> memory</span><br><span class="line">		timers         	Print kernel timers and associated module DPCs</span><br><span class="line">		truecryptmaster	Recover TrueCrypt 7.1a Master Keys</span><br><span class="line">		truecryptpassphrase	TrueCrypt Cached Passphrase Finder</span><br><span class="line">		truecryptsummary	TrueCrypt Summary</span><br><span class="line">		unloadedmodules	Print list of unloaded modules</span><br><span class="line">		userassist     	Print userassist registry keys and information</span><br><span class="line">		userhandles    	Dump the USER handle tables</span><br><span class="line">		vaddump        	Dumps out the vad sections to a file</span><br><span class="line">		vadinfo        	Dump the VAD info</span><br><span class="line">		vadtree        	Walk the VAD tree and display <span class="keyword">in</span> tree format</span><br><span class="line">		vadwalk        	Walk the VAD tree</span><br><span class="line">		vboxinfo       	Dump virtualbox information</span><br><span class="line">		verinfo        	Prints out the version information from PE images</span><br><span class="line">		vmwareinfo     	Dump VMware VMSS/VMSN information</span><br><span class="line">		volshell       	Shell <span class="keyword">in</span> the memory image</span><br><span class="line">		windows        	Print Desktop Windows (verbose details)</span><br><span class="line">		wintree        	Print Z-Order Desktop Windows Tree</span><br><span class="line">		wndscan        	Pool scanner <span class="keyword">for</span> window stations</span><br><span class="line">		yarascan       	Scan process or kernel memory with Yara signatures</span><br></pre></td></tr></table></figure>
+<p>(to be updated)</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://0xomochi.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 0xomochi</li>
+      <li><a href="http://0xomochi.github.io">Home</a></li>
+      
+      <li><a href="https://github.com/0xomochi">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
