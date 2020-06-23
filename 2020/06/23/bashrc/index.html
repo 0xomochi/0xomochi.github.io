@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    .bashrc | MalBox
+    .vimrc | MalBox
   </title>
   <meta name="description" content="omochi&#39;s tech blog">
   
   <meta name="keywords" content="
-  vimrc,setting
+  
   ">
   
   <meta name="author" content="0xomochi">
@@ -97,7 +97,7 @@
         <a href="/archives" class="header-toolbar-left"><i
                   class="fa fa-file-text"></i> Posts </a>
         <a href="/archives"
-           class="header-toolbar-right"> 17 </a>
+           class="header-toolbar-right"> 16 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i
@@ -137,52 +137,15 @@
     <i class="fa fa-user-o"></i>
     0xomochi
 
-    <span class="post-date float-right" title="{{moment(1592894752000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1592894766000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1592894752000).fromNow()}}
+      {{moment(1592894766000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>.bashrc</h1>
-    <p>call plug#begin(‘~/.vim/plugged’)<br>Plug ‘vim-ruby/vim-ruby’, { ‘for’: ‘ruby’ }<br>Plug ‘cocopon/iceberg’<br>call plug#end()</p>
-<p>“ ファイル読み込み時の文字コード設定<br>set encoding=utf-8</p>
-<p>“ vim script内でマルチバイト文字を使う場合の設定<br>scriptencoding utf-8</p>
-<p>“ 保存時の文字コード<br>set fileencoding=utf-8</p>
-<p>“ 読み込み時の文字コードの自動判別. 左側が優先される<br>set fileencodings=ucs-boms,utf-8,euc-jp,cp932</p>
-<p>“ 改行コードの自動判別. 左側が優先される<br>set fileformats=unix,dos,mac</p>
-<p>“ □や○文字が崩れる問題を解決<br>set ambiwidth=double</p>
-<p>“ タブ入力を複数の空白入力に置き換える<br>set expandtab</p>
-<p>“ 画面上でタブ文字が占める幅<br>set tabstop=4</p>
-<p>“ 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅<br>set softtabstop=4</p>
-<p>“ 改行時に前の行のインデントを継続する<br>set autoindent</p>
-<p>“ 改行時に前の行の構文をチェックし次の行のインデントを増減する<br>set smartindent</p>
-<p>“ smartindentで増減する幅<br>set shiftwidth=4</p>
-<p>“ インクリメンタルサーチ. １文字入力毎に検索を行う<br>set incsearch</p>
-<p>“ 検索パターンに大文字小文字を区別しない<br>set ignorecase</p>
-<p>“ 検索パターンに大文字を含んでいたら大文字小文字を区別する<br>set smartcase</p>
-<p>“ 検索結果をハイライト<br>set hlsearch</p>
-<p>“ ESCキー2度押しでハイライトの切り替え<br>nnoremap <silent><esc><esc> :<c-u>set nohlsearch!<cr></cr></c-u></esc></esc></silent></p>
-<p>“ カーソルの左右移動で行末から次の行の行頭への移動が可能になる<br>set whichwrap=b,s,h,l,&lt;,&gt;,[,],~</p>
-<p>“ 行番号を表示<br>set number</p>
-<p>“ カーソルラインをハイライト<br>set cursorline</p>
-<p>“ 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する<br>nnoremap j gj<br>nnoremap k gk<br>nnoremap <down> gj<br>nnoremap <up> gk</up></down></p>
-<p>“ バックスペースキーの有効化<br>set backspace=indent,eol,start</p>
-<p>“ 括弧の対応関係を一瞬表示する<br>set showmatch</p>
-<p>“ Vimの「%」を拡張する<br>source $VIMRUNTIME/macros/matchit.vim</p>
-<p>“ コマンドモードの補完<br>set wildmenu</p>
-<p>“ 保存するコマンド履歴の数<br>set history=5000</p>
-<p>“ マウスの有効化<br>if has(‘mouse’)<br>    set mouse=a<br>    if has(‘mouse_sgr’)<br>        set ttymouse=sgr<br>    elseif v:version &gt; 703 || v:version is 703 &amp;&amp; has(‘patch632’)<br>        set ttymouse=sgr<br>    else<br>        set ttymouse=xterm2<br>    endif<br>endif</p>
-<p>“ ペースト設定<br>“ クリップボードからペーストする時だけインデントしないようにしてくれる<br>if &amp;term =~ “xterm”<br>    let &amp;t_SI .= “\e[?2004h”<br>    let &amp;t_EI .= “\e[?2004l”<br>    let &amp;pastetoggle = “\e[201~”</p>
-<pre><code>function XTermPasteBegin(ret)
-    set paste
-    return a:ret
-endfunction
-
-inoremap &lt;special&gt; &lt;expr&gt; &lt;Esc&gt;[200~ XTermPasteBegin(&quot;&quot;)</code></pre><p>endif</p>
-<p>“ escをjjにマッピング<br>inoremap <silent> jj <esc></esc></silent></p>
-<p>“ スクロール設定<br>map <scrollwheelup> <c-y><br>map <scrollwheeldown> <c-e></c-e></scrollwheeldown></c-y></scrollwheelup></p>
-
+    <h1>.vimrc</h1>
+    
   </article>
 </div>
 
